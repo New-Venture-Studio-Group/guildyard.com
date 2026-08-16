@@ -1,15 +1,15 @@
 /* Realistic editorial content for the prototype. These are article concepts the
-   Journal could plausibly publish — no ventures, customers, results, people,
+   Journal could plausibly publish. No ventures, customers, results, people,
    addresses or company history are invented anywhere in this kit. */
 const GY_CATEGORIES = ["Venture building", "Market evidence", "Operating systems", "Brand architecture", "Decision making"];
 
 const GY_ARTICLES = [
   { id: "first-reader", title: "What a venture owes its first reader", kind: "Essay", category: "Venture building", date: "14 March 2026", iso: "2026-03-14", read: "9 min read",
-    lede: "The first person who reads your offer is not a customer. They are a test — and most ventures waste the result." },
+    lede: "The first person who reads your offer is not a customer. They are a test, and most ventures waste the result." },
   { id: "falsify", title: "Write the number that would prove you wrong", kind: "Field note", category: "Market evidence", date: "27 February 2026", iso: "2026-02-27", read: "6 min read",
     lede: "A claim without a falsifying number is a preference. Naming the number in advance is the cheapest discipline available." },
   { id: "decide-once", title: "Deciding once, then writing it down", kind: "Essay", category: "Operating systems", date: "09 February 2026", iso: "2026-02-09", read: "11 min read",
-    lede: "Most operating drag is not indecision. It is re-deciding — the same argument, quarterly, with no record of the last one." },
+    lede: "Most operating drag is not indecision. It is re-deciding the same argument, quarterly, with no record of the last one." },
   { id: "naming-late", title: "Name it late", kind: "Field note", category: "Brand architecture", date: "21 January 2026", iso: "2026-01-21", read: "5 min read",
     lede: "Naming is the only part of a venture that can be finished in an afternoon, which is exactly why it gets done first." },
   { id: "umbrella", title: "Why an umbrella, and what it is not", kind: "Essay", category: "Brand architecture", date: "12 January 2026", iso: "2026-01-12", read: "8 min read",

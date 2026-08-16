@@ -52,7 +52,7 @@ function SiteFooter({ onNavigate }) {
   );
 }
 
-/* A Journal listing row — the archive's and Journal home's shared unit. */
+/* A Journal listing row. Shared by the archive and Journal home. */
 function ArticleRow({ a, onOpen, showLede = true }) {
   const [hover, setHover] = React.useState(false);
   return (
