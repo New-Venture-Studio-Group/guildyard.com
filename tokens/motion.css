@@ -1,0 +1,16 @@
+:root{
+  /* Motion is short, flat and mechanical. No bounce, no overshoot, no spring. */
+  --gy-duration-instant:80ms; /* @kind other */
+  --gy-duration-fast:120ms; /* @kind other */
+  --gy-duration-base:180ms; /* @kind other */
+  --gy-duration-slow:280ms; /* @kind other */
+  --gy-duration-page:420ms; /* @kind other */
+
+  --gy-ease-standard:cubic-bezier(.2,0,.2,1); /* @kind other */
+  --gy-ease-out:cubic-bezier(.16,1,.3,1); /* @kind other */
+  --gy-ease-in:cubic-bezier(.5,0,1,1); /* @kind other */
+  --gy-ease-linear:linear; /* @kind other */
+
+  --gy-transition-color:color var(--gy-duration-fast) var(--gy-ease-standard),background-color var(--gy-duration-fast) var(--gy-ease-standard),border-color var(--gy-duration-fast) var(--gy-ease-standard); /* @kind other */
+  --gy-transition-all:all var(--gy-duration-base) var(--gy-ease-standard); /* @kind other */
+}

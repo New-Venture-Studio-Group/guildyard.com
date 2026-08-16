@@ -1,0 +1,13 @@
+:root{
+  --gy-border-hair:1px;
+  --gy-border-thick:2px;
+  --gy-border-rule:3px;   /* the copper rule under section headings */
+
+  --gy-border-subtle:1px solid var(--gy-ink-150); /* @kind other */
+  --gy-border-default:1px solid var(--gy-ink-200); /* @kind other */
+  --gy-border-strong:1px solid var(--gy-ink-300); /* @kind other */
+  --gy-border-ink:1px solid var(--gy-ink-800); /* @kind other */
+  --gy-border-copper:1px solid var(--gy-copper-500); /* @kind other */
+  --gy-border-dark-subtle:1px solid rgba(246,243,238,.12); /* @kind other */
+  --gy-border-dark-default:1px solid rgba(246,243,238,.20); /* @kind other */
+}

@@ -1,0 +1,12 @@
+:root{
+  /* The mark is built from hard angles and one large arc. Interface radii stay
+     small and deliberate — nothing is pill-shaped except status dots. */
+  --gy-radius-none:0px;
+  --gy-radius-xs:2px;
+  --gy-radius-sm:3px;
+  --gy-radius-md:5px;
+  --gy-radius-lg:8px;
+  --gy-radius-xl:12px;
+  --gy-radius-avatar:14px; /* matches the squared social avatar corner */
+  --gy-radius-full:999px;
+}

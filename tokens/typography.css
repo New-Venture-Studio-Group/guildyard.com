@@ -1,0 +1,43 @@
+:root{
+  /* Three faces, three jobs. See tokens/fonts.css. */
+  --gy-font-serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --gy-font-sans:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  --gy-font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  --gy-weight-regular:400; /* @kind other */
+  --gy-weight-medium:500; /* @kind other */
+  --gy-weight-semibold:600; /* @kind other */
+  --gy-weight-bold:700; /* @kind other */
+
+  /* Type scale — editorial, tuned to whole px */
+  --gy-text-2xs:11px;
+  --gy-text-xs:12px;
+  --gy-text-sm:14px;
+  --gy-text-md:15px;
+  --gy-text-base:17px;   /* article body */
+  --gy-text-lg:19px;
+  --gy-text-xl:22px;
+  --gy-text-2xl:27px;
+  --gy-text-3xl:34px;
+  --gy-text-4xl:44px;
+  --gy-text-5xl:56px;
+  --gy-text-6xl:68px;
+
+  --gy-leading-tight:1.08; /* @kind other */
+  --gy-leading-snug:1.2; /* @kind other */
+  --gy-leading-normal:1.45; /* @kind other */
+  --gy-leading-relaxed:1.62; /* @kind other */
+  --gy-leading-prose:1.68; /* @kind other */
+
+  /* Tracking. Serif headlines sit near zero; the wide-tracked mono/sans label is
+     the interface's signature, echoing the lockup's spaced "L L C". */
+  --gy-tracking-tight:-0.011em; /* @kind other */
+  --gy-tracking-normal:0em; /* @kind other */
+  --gy-tracking-wide:0.06em; /* @kind other */
+  --gy-tracking-wider:0.14em; /* @kind other */
+  --gy-tracking-widest:0.26em; /* @kind other */
+
+  /* Measure — editorial line length */
+  --gy-measure-prose:680px;
+  --gy-measure-lede:760px;
+}

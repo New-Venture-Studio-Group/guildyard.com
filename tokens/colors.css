@@ -1,0 +1,54 @@
+/* Base palette. The four approved brand colors are marked BRAND; every other
+   step is a harmonious ramp derived from them for interface use. */
+:root{
+  /* Charcoal / parchment neutral ramp (warm-grey, never blue-grey) */
+  --gy-ink-1000:#0F1012;
+  --gy-ink-900:#16171A;
+  --gy-ink-800:#232428;   /* BRAND — Guildyard Charcoal */
+  --gy-ink-700:#33353A;
+  --gy-ink-600:#4A4D54;
+  --gy-ink-500:#6B6F77;
+  --gy-ink-400:#8E9299;
+  --gy-ink-300:#B6B9BE;
+  --gy-ink-200:#D8D5CE;
+  --gy-ink-150:#E4E0D8;
+  --gy-ink-100:#EDE9E2;
+  --gy-ink-50:#F6F3EE;    /* BRAND — Parchment */
+  --gy-ink-0:#FFFFFF;
+
+  /* Aged copper ramp */
+  --gy-copper-800:#5E3A25;
+  --gy-copper-700:#7C4E31;
+  --gy-copper-600:#8E5B39;
+  --gy-copper-500:#A56A43; /* BRAND — Aged Copper */
+  --gy-copper-400:#BC8663;
+  --gy-copper-300:#D3A98D;
+  --gy-copper-200:#E7D2C2;
+  --gy-copper-100:#F3E8DF;
+
+  /* Clay / brick ramp */
+  --gy-clay-700:#63291C;
+  --gy-clay-600:#843C2B;
+  --gy-clay-500:#A64F3A;  /* BRAND — Clay / Brick */
+  --gy-clay-400:#C0705C;
+  --gy-clay-300:#DBA694;
+  --gy-clay-100:#F5E3DC;
+
+  /* Patina — copper's own oxidation. Used only for positive status. */
+  --gy-patina-600:#3C5749;
+  --gy-patina-500:#4F7060;
+  --gy-patina-300:#9DB6AA;
+  --gy-patina-100:#E2ECE6;
+
+  /* Brass — used only for caution status. */
+  --gy-brass-600:#8C6529;
+  --gy-brass-500:#B4863C;
+  --gy-brass-300:#DCC189;
+  --gy-brass-100:#F6ECD8;
+
+  /* Slate — used only for informational status. */
+  --gy-slate-600:#3A4854;
+  --gy-slate-500:#4A5B6B;
+  --gy-slate-300:#9EAAB5;
+  --gy-slate-100:#E6EAEE;
+}

@@ -1,0 +1,74 @@
+/* Semantic aliases. Product code should reference these, not the base ramps. */
+:root{
+  /* Surfaces */
+  --gy-surface-page:var(--gy-ink-50);
+  --gy-surface-raised:var(--gy-ink-0);
+  --gy-surface-sunken:var(--gy-ink-100);
+  --gy-surface-card:var(--gy-ink-0);
+  --gy-surface-inverse:var(--gy-ink-800);
+  --gy-surface-inverse-raised:var(--gy-ink-700);
+  --gy-surface-accent-soft:var(--gy-copper-100);
+  --gy-surface-overlay:rgba(22,23,26,.62);
+  --gy-surface-scrim:linear-gradient(180deg,rgba(22,23,26,0) 0%,rgba(22,23,26,.72) 100%); /* @kind other */
+
+  /* Text */
+  --gy-text-primary:var(--gy-ink-900);
+  --gy-text-body:var(--gy-ink-700);
+  --gy-text-secondary:var(--gy-ink-500);
+  --gy-text-muted:var(--gy-ink-400);
+  --gy-text-accent:var(--gy-copper-600);
+  --gy-text-on-inverse:var(--gy-ink-50);
+  --gy-text-on-inverse-muted:rgba(246,243,238,.62);
+  --gy-text-on-accent:var(--gy-ink-0);
+  --gy-text-link:var(--gy-copper-600);
+  --gy-text-link-hover:var(--gy-clay-600);
+
+  /* Lines */
+  --gy-line-subtle:var(--gy-ink-150);
+  --gy-line-default:var(--gy-ink-200);
+  --gy-line-strong:var(--gy-ink-300);
+  --gy-line-accent:var(--gy-copper-500);
+  --gy-line-on-inverse:rgba(246,243,238,.16);
+
+  /* Interactive — primary (charcoal), secondary (outline), accent (copper) */
+  --gy-action-primary-bg:var(--gy-ink-800);
+  --gy-action-primary-bg-hover:var(--gy-ink-900);
+  --gy-action-primary-bg-active:var(--gy-ink-1000);
+  --gy-action-primary-fg:var(--gy-ink-50);
+  --gy-action-accent-bg:var(--gy-copper-500);
+  --gy-action-accent-bg-hover:var(--gy-copper-600);
+  --gy-action-accent-bg-active:var(--gy-copper-700);
+  --gy-action-accent-fg:var(--gy-ink-0);
+  --gy-action-quiet-bg-hover:var(--gy-ink-100);
+  --gy-action-quiet-bg-active:var(--gy-ink-150);
+  --gy-action-disabled-bg:var(--gy-ink-150);
+  --gy-action-disabled-fg:var(--gy-ink-400);
+
+  /* Status */
+  --gy-status-success:var(--gy-patina-500);
+  --gy-status-success-soft:var(--gy-patina-100);
+  --gy-status-success-fg:var(--gy-patina-600);
+  --gy-status-warning:var(--gy-brass-500);
+  --gy-status-warning-soft:var(--gy-brass-100);
+  --gy-status-warning-fg:var(--gy-brass-600);
+  --gy-status-danger:var(--gy-clay-500);
+  --gy-status-danger-soft:var(--gy-clay-100);
+  --gy-status-danger-fg:var(--gy-clay-600);
+  --gy-status-info:var(--gy-slate-500);
+  --gy-status-info-soft:var(--gy-slate-100);
+  --gy-status-info-fg:var(--gy-slate-600);
+
+  /* Type roles */
+  --gy-type-display:var(--gy-weight-semibold) var(--gy-text-6xl)/var(--gy-leading-tight) var(--gy-font-serif); /* @kind font */
+  --gy-type-h1:var(--gy-weight-semibold) var(--gy-text-4xl)/var(--gy-leading-snug) var(--gy-font-serif); /* @kind font */
+  --gy-type-h2:var(--gy-weight-semibold) var(--gy-text-3xl)/var(--gy-leading-snug) var(--gy-font-serif); /* @kind font */
+  --gy-type-h3:var(--gy-weight-semibold) var(--gy-text-xl)/var(--gy-leading-snug) var(--gy-font-serif); /* @kind font */
+  --gy-type-lede:var(--gy-weight-regular) var(--gy-text-lg)/var(--gy-leading-relaxed) var(--gy-font-serif); /* @kind font */
+  --gy-type-prose:var(--gy-weight-regular) var(--gy-text-base)/var(--gy-leading-prose) var(--gy-font-serif); /* @kind font */
+  --gy-type-body:var(--gy-weight-regular) var(--gy-text-md)/var(--gy-leading-relaxed) var(--gy-font-sans); /* @kind font */
+  --gy-type-body-sm:var(--gy-weight-regular) var(--gy-text-sm)/var(--gy-leading-normal) var(--gy-font-sans); /* @kind font */
+  --gy-type-ui:var(--gy-weight-medium) var(--gy-text-sm)/1.3 var(--gy-font-sans); /* @kind font */
+  --gy-type-label:var(--gy-weight-semibold) var(--gy-text-xs)/1.2 var(--gy-font-sans); /* @kind font */
+  --gy-type-meta:var(--gy-weight-medium) var(--gy-text-2xs)/1.2 var(--gy-font-mono); /* @kind font */
+  --gy-type-mono:var(--gy-weight-regular) var(--gy-text-sm)/var(--gy-leading-normal) var(--gy-font-mono); /* @kind font */
+}

@@ -1,0 +1,9 @@
+/* Guildyard web type system.
+   The wordmark is custom vector artwork and is ALWAYS used as supplied — it is
+   never set in a live font. These three faces are deliberate web-design choices
+   for guildyard.com, not stand-ins for a house typeface:
+     Source Serif 4  — editorial headlines and article titles
+     IBM Plex Sans   — navigation, interface copy, supporting text
+     IBM Plex Mono   — dates, categories, metadata, small section labels
+   Google-hosted for prototyping; self-host at implementation. */
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap");

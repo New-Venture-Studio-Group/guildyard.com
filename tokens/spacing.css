@@ -1,0 +1,34 @@
+:root{
+  /* 4px base grid */
+  --gy-space-0:0px;
+  --gy-space-1:4px;
+  --gy-space-2:8px;
+  --gy-space-3:12px;
+  --gy-space-4:16px;
+  --gy-space-5:20px;
+  --gy-space-6:24px;
+  --gy-space-8:32px;
+  --gy-space-10:40px;
+  --gy-space-12:48px;
+  --gy-space-16:64px;
+  --gy-space-20:80px;
+  --gy-space-24:96px;
+  --gy-space-32:128px;
+  --gy-space-40:160px;
+
+  /* Layout */
+  --gy-container-sm:720px;
+  --gy-container-md:960px;
+  --gy-container-lg:1200px;
+  --gy-container-xl:1360px;
+  --gy-gutter:24px;
+  --gy-gutter-lg:40px;
+  --gy-section-y:96px;
+  --gy-section-y-lg:128px;
+
+  /* Logo clear space: 1x = symbol crossbar thickness, per the identity spec.
+     At the sizes below, one clear-space unit resolves to these values. */
+  --gy-logo-clearspace:0.18em; /* @kind other */
+  --gy-logo-min-symbol:20px;
+  --gy-logo-min-lockup:180px;
+}

@@ -1,0 +1,16 @@
+/* Minimal element defaults. Consumers get sane brand type + link colors. */
+:root{color-scheme:light}
+body{background:var(--gy-surface-page);color:var(--gy-text-body);font:var(--gy-type-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,h5,h6{font-family:var(--gy-font-serif);font-weight:var(--gy-weight-semibold);color:var(--gy-text-primary);letter-spacing:var(--gy-tracking-tight);margin:0}
+p{text-wrap:pretty}
+a{color:var(--gy-text-link);text-decoration:none;border-bottom:1px solid color-mix(in oklab,var(--gy-copper-500) 40%,transparent);transition:var(--gy-transition-color)}
+a:hover{color:var(--gy-text-link-hover);border-bottom-color:var(--gy-clay-600)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:none;box-shadow:var(--gy-focus-ring)}
+::selection{background:var(--gy-copper-200);color:var(--gy-ink-900)}
+code,kbd,pre,samp{font-family:var(--gy-font-mono)}
+/* Wide-tracked label: eyebrows, section markers, metadata */
+.gy-eyebrow{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;color:var(--gy-text-accent)}
+/* The copper rule flanking a centered word, as in the lockup's "LLC" line */
+.gy-rule-label{display:flex;align-items:center;gap:var(--gy-space-4);color:var(--gy-copper-500);font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-widest);text-transform:uppercase}
+.gy-rule-label::before,.gy-rule-label::after{content:"";flex:1;height:1px;background:var(--gy-copper-500)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}}
