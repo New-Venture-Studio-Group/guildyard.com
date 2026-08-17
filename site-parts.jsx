@@ -1,7 +1,7 @@
-const { Logo, NavBar, Button, Divider, Icon, RuleLabel, ArticleMeta, Card } = window.GuildyardDesignSystem_59975b;
+const { Logo, Button, Divider, Icon, RuleLabel, ArticleMeta, Card } = window.GuildyardDesignSystem_59975b;
 
-function Container({ children, width = 1160, style }) {
-  return <div style={{ width: "100%", maxWidth: width, margin: "0 auto", padding: "0 40px", boxSizing: "border-box", ...style }}>{children}</div>;
+function Container({ children, width = 1160, style, className = "" }) {
+  return <div className={"gy-wrap " + className} style={{ maxWidth: width, ...style }}>{children}</div>;
 }
 
 const GY_NAV = [
@@ -14,8 +14,21 @@ const GY_NAV = [
 function SiteHeader({ view, onNavigate }) {
   const active = view === "article" ? "journal" : view === "policy" ? "about" : view;
   return (
-    <NavBar tone="light" items={GY_NAV} activeId={active} onNavigate={onNavigate}
-      actions={<Button size="sm" variant="secondary" iconRight="arrow-right" onClick={() => onNavigate("journal")}>Read the Journal</Button>} />
+    <header className="gy-header">
+      <Container className="gy-header-inner">
+        <a href="#" onClick={(e) => { e.preventDefault(); onNavigate("home"); }} style={{ borderBottom: "none" }}>
+          <Logo variant="lockup" tone="charcoal" height={32} basePath="." />
+        </a>
+        <nav className="gy-nav">
+          {GY_NAV.map((it) => (
+            <a key={it.id} href="#" className={it.id === active ? "is-active" : ""} onClick={(e) => { e.preventDefault(); onNavigate(it.id); }}>{it.label}</a>
+          ))}
+        </nav>
+        <div className="gy-header-cta">
+          <Button size="sm" variant="secondary" iconRight="arrow-right" onClick={() => onNavigate("journal")}>Read the Journal</Button>
+        </div>
+      </Container>
+    </header>
   );
 }
 
@@ -23,7 +36,7 @@ function SiteFooter({ onNavigate }) {
   return (
     <footer style={{ background: "var(--gy-ink-900)", padding: "64px 0 36px", marginTop: 8 }}>
       <Container>
-        <div style={{ display: "grid", gridTemplateColumns: "1.6fr 1fr 1fr", gap: 56, alignItems: "start" }}>
+        <div className="gy-footer-grid">
           <div style={{ display: "flex", flexDirection: "column", gap: 18, alignItems: "flex-start" }}>
             <Logo variant="lockup" tone="ivory" height={32} basePath="." />
             <p style={{ font: "var(--gy-weight-semibold) 18px/1.35 var(--gy-font-serif)", letterSpacing: "0.02em", color: "var(--gy-ink-50)", margin: 0 }}>
@@ -58,8 +71,7 @@ function SiteFooter({ onNavigate }) {
 function ArticleRow({ a, onOpen, showLede = true }) {
   const [hover, setHover] = React.useState(false);
   return (
-    <article onClick={() => onOpen(a)} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}
-      style={{ display: "grid", gridTemplateColumns: "132px 1fr auto", gap: 28, alignItems: "baseline", padding: "22px 0", borderBottom: "var(--gy-border-subtle)", cursor: "pointer" }}>
+    <article className="gy-article-row" onClick={() => onOpen(a)} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
       <span style={{ font: "var(--gy-type-meta)", letterSpacing: "var(--gy-tracking-wide)", textTransform: "uppercase", color: "var(--gy-ink-500)" }}>{a.date}</span>
       <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
         <h3 style={{ font: "var(--gy-weight-semibold) var(--gy-text-xl)/1.26 var(--gy-font-serif)", letterSpacing: "var(--gy-tracking-tight)", color: hover ? "var(--gy-copper-700)" : "var(--gy-ink-900)", transition: "color var(--gy-duration-fast) var(--gy-ease-standard)" }}>{a.title}</h3>

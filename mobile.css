@@ -1,0 +1,113 @@
+/* Mobile and narrow-tablet layout for guildyard.com */
+
+.gy-wrap {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.gy-header {
+  background: var(--gy-ink-0);
+  border-bottom: var(--gy-border-subtle);
+}
+.gy-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  min-height: 84px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.gy-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex: 1;
+}
+.gy-nav a {
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  font: var(--gy-type-meta);
+  letter-spacing: var(--gy-tracking-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--gy-ink-500);
+}
+.gy-nav a.is-active {
+  border-bottom-color: var(--gy-copper-500);
+  color: var(--gy-ink-900);
+}
+.gy-header-cta { flex: 0 0 auto; }
+
+.gy-split,
+.gy-thirds,
+.gy-article-row,
+.gy-archive-row,
+.gy-footer-grid,
+.gy-more {
+  display: grid;
+}
+.gy-split { grid-template-columns: 1.25fr .75fr; gap: 72px; align-items: start; }
+.gy-split.is-lead { grid-template-columns: 1.35fr .65fr; gap: 64px; }
+.gy-split.is-prose { grid-template-columns: minmax(0, var(--gy-measure-prose)) 1fr; gap: 72px; }
+.gy-thirds { grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.gy-more { grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 26px; }
+.gy-article-row {
+  grid-template-columns: 132px 1fr auto;
+  gap: 28px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: var(--gy-border-subtle);
+  cursor: pointer;
+}
+.gy-archive-row {
+  grid-template-columns: 112px 1fr 190px 92px;
+  gap: 24px;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: var(--gy-border-subtle);
+  cursor: pointer;
+}
+.gy-footer-grid { grid-template-columns: 1.6fr 1fr 1fr; gap: 56px; align-items: start; }
+.gy-search { width: 280px; }
+
+@media (max-width: 900px) {
+  .gy-wrap { padding-left: 20px; padding-right: 20px; }
+  .gy-split,
+  .gy-split.is-lead,
+  .gy-split.is-prose,
+  .gy-thirds,
+  .gy-more,
+  .gy-footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .gy-header-inner {
+    flex-wrap: wrap;
+    min-height: 0;
+    gap: 12px 20px;
+  }
+  .gy-nav {
+    order: 3;
+    flex: 1 1 100%;
+    gap: 14px 18px;
+    flex-wrap: wrap;
+  }
+  .gy-search { width: 100%; }
+  .gy-aside-left {
+    border-left: none !important;
+    padding-left: 0 !important;
+    border-top: 3px solid var(--gy-ink-800);
+    padding-top: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .gy-article-row,
+  .gy-archive-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 18px 0;
+  }
+  .gy-hero { padding: 56px 0 48px !important; }
+  .gy-band { padding: 48px 0 !important; }
+}

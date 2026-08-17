@@ -18,7 +18,7 @@ function ArchiveView({ onOpenArticle }) {
             <h1 style={{ font: "var(--gy-weight-semibold) var(--gy-text-4xl)/1.16 var(--gy-font-serif)", letterSpacing: "-0.012em", color: "var(--gy-ink-900)" }}>Everything the Journal has published</h1>
             <p style={{ font: "var(--gy-type-body)", color: "var(--gy-text-secondary)", margin: 0 }}>Newest first. {rows.length} articles.</p>
           </div>
-          <div style={{ width: 280 }}>
+          <div className="gy-search">
             <Field label="Search the archive" htmlFor="arch-q"><Input id="arch-q" size="sm" icon="search" placeholder="Keyword or category" /></Field>
           </div>
         </div>
@@ -32,7 +32,7 @@ function ArchiveView({ onOpenArticle }) {
               <span style={{ font: "var(--gy-type-meta)", letterSpacing: "var(--gy-tracking-wide)", textTransform: "uppercase", color: "var(--gy-ink-500)" }}>{rows.filter((a) => a.iso.startsWith(y)).length} articles</span>
             </div>
             {rows.filter((a) => a.iso.startsWith(y)).map((a) => (
-              <div key={a.id} onClick={() => onOpenArticle(a)} style={{ display: "grid", gridTemplateColumns: "112px 1fr 190px 92px", gap: 24, alignItems: "baseline", padding: "16px 0", borderBottom: "var(--gy-border-subtle)", cursor: "pointer" }}>
+              <div key={a.id} className="gy-archive-row" onClick={() => onOpenArticle(a)}>
                 <span style={{ font: "var(--gy-type-meta)", letterSpacing: "var(--gy-tracking-wide)", color: "var(--gy-ink-500)" }}>{a.iso}</span>
                 <span style={{ font: "var(--gy-weight-semibold) var(--gy-text-lg)/1.3 var(--gy-font-serif)", color: "var(--gy-ink-900)" }}>{a.title}</span>
                 <span style={{ font: "var(--gy-type-meta)", letterSpacing: "var(--gy-tracking-wide)", textTransform: "uppercase", color: "var(--gy-copper-600)" }}>{a.category}</span>

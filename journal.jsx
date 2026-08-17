@@ -29,14 +29,14 @@ function JournalView({ onNavigate, onOpenArticle }) {
       {lead && (
         <section style={{ padding: "8px 0 56px" }}>
           <Container>
-            <article onClick={() => onOpenArticle(lead)} style={{ cursor: "pointer", borderTop: "3px solid var(--gy-ink-800)", paddingTop: 32, display: "grid", gridTemplateColumns: "1.35fr .65fr", gap: 64, alignItems: "start" }}>
+            <article className="gy-split is-lead" onClick={() => onOpenArticle(lead)} style={{ cursor: "pointer", borderTop: "3px solid var(--gy-ink-800)", paddingTop: 32 }}>
               <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
                 <ArticleMeta date={lead.date} category={lead.category} readingTime={lead.read} />
                 <h2 style={{ font: "var(--gy-weight-semibold) var(--gy-text-4xl)/1.14 var(--gy-font-serif)", letterSpacing: "-0.012em", color: "var(--gy-ink-900)", maxWidth: 720 }}>{lead.title}</h2>
                 <p style={{ font: "var(--gy-type-lede)", color: "var(--gy-ink-700)", margin: 0, maxWidth: 680 }}>{lead.lede}</p>
                 <span style={{ display: "inline-flex", alignItems: "center", gap: 8, font: "var(--gy-type-meta)", letterSpacing: "var(--gy-tracking-wider)", textTransform: "uppercase", color: "var(--gy-copper-600)" }}>Read the article <Icon name="arrow-right" size={13} /></span>
               </div>
-              <aside style={{ borderLeft: "var(--gy-border-default)", paddingLeft: 28, display: "flex", flexDirection: "column", gap: 10 }}>
+              <aside className="gy-aside-left" style={{ borderLeft: "var(--gy-border-default)", paddingLeft: 28, display: "flex", flexDirection: "column", gap: 10 }}>
                 <span style={{ font: "var(--gy-type-meta)", letterSpacing: "var(--gy-tracking-wider)", textTransform: "uppercase", color: "var(--gy-ink-500)" }}>{lead.kind}</span>
                 <p style={{ font: "var(--gy-type-body)", color: "var(--gy-text-secondary)", margin: 0 }}>
                   Essays argue a position at length. Field notes are shorter and report a single observation.

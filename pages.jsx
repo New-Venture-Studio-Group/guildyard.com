@@ -5,7 +5,7 @@ function AboutView({ onNavigate }) {
   return (
     <section style={{ padding: "72px 0 96px" }}>
       <Container>
-        <div style={{ display: "grid", gridTemplateColumns: "minmax(0,var(--gy-measure-prose)) 1fr", gap: 72, alignItems: "start" }}>
+        <div className="gy-split is-prose">
           <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
             <SectionHeading eyebrow="About" level={1} title="Guildyard LLC develops and tests independent ventures and brands." />
             <Prose>

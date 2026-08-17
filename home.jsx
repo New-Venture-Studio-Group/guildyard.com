@@ -6,9 +6,9 @@ function HomeView({ onNavigate, onOpenArticle }) {
   return (
     <div>
       {/* Statement */}
-      <section style={{ padding: "112px 0 96px", borderBottom: "var(--gy-border-subtle)" }}>
+      <section className="gy-hero" style={{ padding: "112px 0 96px", borderBottom: "var(--gy-border-subtle)" }}>
         <Container>
-          <div style={{ display: "grid", gridTemplateColumns: "1.25fr .75fr", gap: 72, alignItems: "start" }}>
+          <div className="gy-split">
             <div style={{ display: "flex", flexDirection: "column", gap: 30, alignItems: "flex-start" }}>
               <span style={{ font: "var(--gy-type-meta)", letterSpacing: "var(--gy-tracking-wider)", textTransform: "uppercase", color: "var(--gy-copper-600)" }}>Guildyard LLC · Texas</span>
               <h1 style={{ fontFamily: "var(--gy-font-serif)", fontWeight: "var(--gy-weight-semibold)", fontSize: "clamp(42px,4.9vw,64px)", lineHeight: 1.08, letterSpacing: "-0.014em", color: "var(--gy-ink-900)", margin: 0, maxWidth: 780 }}>
@@ -34,10 +34,10 @@ function HomeView({ onNavigate, onOpenArticle }) {
       </section>
 
       {/* The model, three parts */}
-      <section style={{ padding: "88px 0", background: "var(--gy-ink-100)" }}>
+      <section className="gy-band" style={{ padding: "88px 0", background: "var(--gy-ink-100)" }}>
         <Container>
           <RuleLabel align="left" tone="ink">How the umbrella works</RuleLabel>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 40, marginTop: 44 }}>
+          <div className="gy-thirds" style={{ marginTop: 44 }}>
             {[["01", "Ideas are tested, not launched", "An idea earns its next stage by answering a question that was written down before the work began."],
               ["02", "Each venture keeps its own identity", "Audience, name, offer and commercial model belong to the venture. The parent name stays out of the way."],
               ["03", "Continuity sits with the parent", "Ownership, records and the decisions already made persist here, so nothing has to be re-argued from scratch."]].map(([n, t, b]) => (

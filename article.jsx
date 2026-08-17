@@ -24,7 +24,7 @@ function ArticleView({ article, onNavigate, onOpenArticle }) {
             </div>
           </header>
 
-          <div style={{ display: "grid", gridTemplateColumns: "minmax(0,var(--gy-measure-prose)) 1fr", gap: 72, marginTop: 48, alignItems: "start" }}>
+          <div className="gy-split is-prose" style={{ marginTop: 48 }}>
             <Prose>
               <p>The first person who reads an offer is not a customer. They are a measurement, and the measurement is usually thrown away, because it arrives before anyone has decided what it would mean.</p>
               <h2>Decide what the reader is being asked</h2>
@@ -72,7 +72,7 @@ function ArticleView({ article, onNavigate, onOpenArticle }) {
       <section style={{ padding: "80px 0 96px", marginTop: 64, borderTop: "var(--gy-border-subtle)" }}>
         <Container>
           <span style={{ font: "var(--gy-type-meta)", letterSpacing: "var(--gy-tracking-wider)", textTransform: "uppercase", color: "var(--gy-copper-600)" }}>More from the Journal</span>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 32, marginTop: 26 }}>
+          <div className="gy-more">
             {more.map((m) => (
               <div key={m.id} onClick={() => onOpenArticle(m)} style={{ cursor: "pointer", display: "flex", flexDirection: "column", gap: 12, paddingTop: 18, borderTop: "3px solid var(--gy-ink-800)" }}>
                 <ArticleMeta date={m.date} category={m.category} />
