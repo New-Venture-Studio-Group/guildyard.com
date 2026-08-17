@@ -26,7 +26,7 @@ function SiteFooter({ onNavigate }) {
         <div style={{ display: "grid", gridTemplateColumns: "1.6fr 1fr 1fr", gap: 56, alignItems: "start" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 18, alignItems: "flex-start" }}>
             <Logo variant="lockup" tone="ivory" height={32} basePath="." />
-            <img src="./assets/logo/guildyard-tagline-ivory.svg" alt="Built on Intent. Focused on Value." style={{ height: 14, opacity: 0.75 }} />
+            <img src="./assets/logo/guildyard-tagline-ivory.svg" alt="Built on Intent. Focused on Value." style={{ height: 22, width: "auto", maxWidth: "100%", opacity: 1 }} />
             <p style={{ font: "var(--gy-type-body)", color: "var(--gy-text-on-inverse-muted)", margin: 0, maxWidth: 380 }}>
               Guildyard LLC develops and tests independent ventures and brands.
             </p>
