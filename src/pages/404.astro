@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+import Button from "../components/Button.astro";
+---
+<Base title="Page not found · Guildyard LLC" description="That page does not exist.">
+  <section class="nf">
+    <div class="gy-wrap">
+      <span class="code">404</span>
+      <h1>That page does not exist.</h1>
+      <p>It may have been moved, or the link may be wrong. The Journal archive lists everything published.</p>
+      <div class="actions">
+        <Button href="/journal/" variant="primary" iconRight="arrow-right">Read the Journal</Button>
+        <Button href="/archive/" variant="secondary">Browse the archive</Button>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+.nf{padding:140px 0 160px}
+.nf .gy-wrap{display:flex;flex-direction:column;gap:20px;align-items:flex-start;max-width:var(--gy-measure-prose)}
+.code{font:var(--gy-weight-medium) var(--gy-text-sm)/1 var(--gy-font-mono);letter-spacing:var(--gy-tracking-wider);color:var(--gy-copper-600)}
+.nf h1{font:var(--gy-weight-semibold) var(--gy-text-4xl)/1.14 var(--gy-font-serif);letter-spacing:-.012em;color:var(--gy-ink-900)}
+.nf p{font:var(--gy-type-lede);color:var(--gy-ink-700);margin:0}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+</style>

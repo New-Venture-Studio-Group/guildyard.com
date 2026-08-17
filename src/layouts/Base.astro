@@ -1,0 +1,103 @@
+---
+import "../styles/global.css";
+import Logo from "../components/Logo.astro";
+import Button from "../components/Button.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  /* Which nav item reads as current. */
+  section?: "home" | "journal" | "archive" | "about";
+  /* Set on article pages so the canonical URL is the article, not the listing. */
+  canonical?: string;
+}
+const {
+  title,
+  description = "Guildyard LLC develops and tests independent ventures and brands.",
+  section,
+  canonical
+} = Astro.props;
+
+const NAV = [
+  { id: "home", label: "Guildyard", href: "/" },
+  { id: "journal", label: "Journal", href: "/journal/" },
+  { id: "archive", label: "Archive", href: "/archive/" },
+  { id: "about", label: "About", href: "/about/" }
+];
+const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="icon" href="/assets/favicon/guildyard-favicon-32.png" />
+  <link rel="alternate" type="application/rss+xml" title="The Guildyard Journal" href="/rss.xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta name="twitter:card" content="summary" />
+</head>
+<body>
+  <header class="gy-header">
+    <div class="gy-wrap gy-header-inner">
+      <a href="/" style="border-bottom:none"><Logo variant="lockup" tone="charcoal" height={32} /></a>
+      <nav class="gy-nav">
+        {NAV.map((it) => (
+          <a href={it.href} class={it.id === section ? "is-active" : ""}>{it.label}</a>
+        ))}
+      </nav>
+      <div class="gy-header-cta">
+        <Button href="/journal/" variant="secondary" size="sm" iconRight="arrow-right">Read the Journal</Button>
+      </div>
+    </div>
+  </header>
+
+  <main><slot /></main>
+
+  <footer class="site-footer">
+    <div class="gy-wrap">
+      <div class="gy-footer-grid">
+        <div class="brand">
+          <Logo variant="lockup" tone="ivory" height={32} />
+          <p class="tagline">Built on Intent. Focused on Value.</p>
+          <p class="blurb">Guildyard LLC develops and tests independent ventures and brands.</p>
+        </div>
+        <div class="col">
+          <span class="col-head">Journal</span>
+          <a href="/journal/">Latest</a>
+          <a href="/archive/">Archive</a>
+          <a href="/editorial-policy/">Editorial policy</a>
+          <a href="/rss.xml">RSS</a>
+        </div>
+        <div class="col">
+          <span class="col-head">Company</span>
+          <a href="/about/">About Guildyard</a>
+          <span class="place">Texas, United States</span>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2026 Guildyard LLC</span>
+        <span>The Journal is free to read</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style>
+.site-footer{background:var(--gy-ink-900);padding:64px 0 36px;margin-top:8px}
+.brand{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.tagline{font:var(--gy-weight-semibold) 18px/1.35 var(--gy-font-serif);letter-spacing:.02em;color:var(--gy-ink-50);margin:0}
+.blurb{font:var(--gy-type-body);color:var(--gy-text-on-inverse-muted);margin:0;max-width:380px}
+.col{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.col-head{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;color:var(--gy-copper-400)}
+.col a{font:var(--gy-type-body);color:var(--gy-text-on-inverse-muted);text-decoration:none;border-bottom:none}
+.col a:hover{color:var(--gy-ink-50)}
+.place{font:var(--gy-type-body);color:rgba(246,243,238,.38)}
+.legal{margin-top:48px;padding-top:18px;border-top:1px solid rgba(246,243,238,.12);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wide);color:rgba(246,243,238,.42)}
+</style>

@@ -1,0 +1,24 @@
+---
+/* The lockup's flanked "L L C" device, generalised. Punctuation, not a heading:
+   at most once or twice per view. */
+interface Props { tone?: "copper" | "ink" | "ivory"; align?: "center" | "left"; }
+const { tone = "copper", align = "center" } = Astro.props;
+---
+<div class={`gy-rule-label tone-${tone} align-${align}`}>
+  <span aria-hidden="true" class="line start"></span>
+  <span class="label"><slot /></span>
+  <span aria-hidden="true" class="line"></span>
+</div>
+
+<style>
+.gy-rule-label{display:flex;align-items:center;gap:var(--gy-space-4)}
+.line{flex:1;height:1px}
+.align-left .start{display:none}
+.label{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-widest);text-transform:uppercase;white-space:nowrap}
+.tone-copper .line{background:var(--gy-copper-500)}
+.tone-copper .label{color:var(--gy-copper-600)}
+.tone-ink .line{background:var(--gy-ink-300)}
+.tone-ink .label{color:var(--gy-ink-600)}
+.tone-ivory .line{background:rgba(246,243,238,.45)}
+.tone-ivory .label{color:var(--gy-ink-50)}
+</style>

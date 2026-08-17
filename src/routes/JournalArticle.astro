@@ -1,0 +1,104 @@
+---
+import Base from "../layouts/Base.astro";
+import ArticleMeta from "../components/ArticleMeta.astro";
+import Icon from "../components/Icon.astro";
+import { getArticles, readingTime, type Article } from "../lib/journal";
+import { render } from "astro:content";
+
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  return articles.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry, more: articles.filter((x) => x.id !== entry.id).slice(0, 3) }
+  }));
+}
+
+interface Props { entry: Article; more: Article[]; }
+const { entry, more } = Astro.props;
+const { Content } = await render(entry);
+const { title, lede, kind, category, date } = entry.data;
+---
+<Base title={`${title} · The Guildyard Journal`} description={lede} section="journal">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <div class="gy-wrap">
+      <a href="/journal/">Journal</a>
+      <Icon name="chevron-right" size={13} />
+      <span aria-current="page">{category}</span>
+    </div>
+  </nav>
+
+  <article>
+    <div class="gy-wrap">
+      <header class="head">
+        <ArticleMeta date={date} category={category} readingTime={readingTime(entry)} />
+        <h1>{title}</h1>
+        <p class="lede">{lede}</p>
+        <div class="kindline">
+          <span aria-hidden="true" class="rule"></span>
+          <span>{kind} · The Guildyard Journal</span>
+        </div>
+      </header>
+
+      <div class="gy-split is-prose body">
+        <div class="gy-prose"><Content /></div>
+        <aside class="sidebar">
+          <div class="block">
+            <span class="head-label">Category</span>
+            <a href="/archive/" class="chip">{category}</a>
+          </div>
+          <div class="block bordered">
+            <span class="head-label">Corrections</span>
+            <p>Articles are corrected in place and the change is noted at the foot. See the <a href="/editorial-policy/">editorial policy</a>.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+
+  {more.length > 0 && (
+    <section class="more">
+      <div class="gy-wrap">
+        <span class="head-label copper">More from the Journal</span>
+        <div class="gy-more">
+          {more.map((m) => (
+            <div class="card">
+              <ArticleMeta date={m.data.date} category={m.data.category} />
+              <h3><a href={`/journal/${m.id}/`}>{m.data.title}</a></h3>
+              <p>{m.data.lede}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Base>
+
+<style>
+.crumbs{padding:40px 0 0}
+.crumbs .gy-wrap{display:flex;align-items:center;gap:var(--gy-space-2);font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;color:var(--gy-ink-500)}
+.crumbs a{color:var(--gy-ink-500);text-decoration:none;border-bottom:none}
+.crumbs a:hover{color:var(--gy-ink-800)}
+.crumbs [aria-current]{color:var(--gy-ink-800)}
+article{padding:36px 0 0}
+.head{max-width:820px;display:flex;flex-direction:column;gap:20px}
+.head h1{font-family:var(--gy-font-serif);font-weight:var(--gy-weight-semibold);font-size:clamp(34px,3.9vw,54px);line-height:1.1;letter-spacing:-.014em;color:var(--gy-ink-900)}
+.head .lede{font:var(--gy-type-lede);color:var(--gy-ink-700);margin:0;max-width:var(--gy-measure-lede)}
+.kindline{display:flex;align-items:center;gap:14px;padding-top:6px;font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wide);text-transform:uppercase;color:var(--gy-ink-500)}
+.rule{width:44px;height:3px;background:var(--gy-copper-500)}
+.body{margin-top:48px}
+.sidebar{display:flex;flex-direction:column;gap:22px;position:sticky;top:24px}
+.block{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.bordered{padding-top:20px;border-top:var(--gy-border-subtle)}
+.head-label{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;color:var(--gy-ink-500)}
+.head-label.copper{color:var(--gy-copper-600)}
+.chip{display:inline-flex;align-items:center;height:28px;padding:0 10px;border:var(--gy-border-default);border-radius:var(--gy-radius-sm);font:var(--gy-weight-medium) var(--gy-text-xs)/1 var(--gy-font-sans);color:var(--gy-ink-600);text-decoration:none}
+.chip:hover{background:var(--gy-ink-100)}
+.sidebar p{font:var(--gy-type-body-sm);color:var(--gy-text-secondary);margin:0}
+.more{padding:80px 0 96px;margin-top:64px;border-top:var(--gy-border-subtle)}
+.gy-more{margin-top:26px}
+.card{display:flex;flex-direction:column;gap:12px;padding-top:18px;border-top:3px solid var(--gy-ink-800)}
+.card h3{font:var(--gy-weight-semibold) var(--gy-text-xl)/1.26 var(--gy-font-serif)}
+.card h3 a{color:var(--gy-ink-900);text-decoration:none;border-bottom:none}
+.card h3 a:hover{color:var(--gy-copper-700)}
+.card p{font:var(--gy-type-body);color:var(--gy-text-secondary);margin:0}
+</style>

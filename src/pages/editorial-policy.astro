@@ -1,0 +1,47 @@
+---
+import Base from "../layouts/Base.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import RuleLabel from "../components/RuleLabel.astro";
+---
+<Base title="Editorial policy · The Guildyard Journal" section="about"
+  description="What the Guildyard Journal publishes, how it is funded, and how it handles being wrong.">
+  <section class="policy">
+    <div class="gy-wrap">
+      <div class="col">
+        <SectionHeading eyebrow="The Guildyard Journal" level={1} title="Editorial policy"
+          description="What the Journal publishes, how it is funded, and how it handles being wrong." />
+        <div class="notice">
+          <strong>The Journal is free to read</strong>
+          <p>It is not a lead magnet, a gated download, or advertising for a Guildyard venture.</p>
+        </div>
+        <div class="gy-prose">
+          <h2>What we publish</h2>
+          <p>Articles and field notes on venture building, market evidence, operating systems, brand architecture and disciplined business decision-making. Essays argue a position at length; field notes report a single observation and stay short.</p>
+          <h2>Who it is for</h2>
+          <p>Independent operators, founders, small-business builders, and product and operations leaders. Anyone evaluating or building a practical venture.</p>
+          <h2>Evidence and sources</h2>
+          <p>Claims that rest on outside work cite it and link to it. Where a claim rests on our own experience, it says so plainly rather than borrowing the authority of research.</p>
+          <h2>Corrections</h2>
+          <p>Errors of fact are corrected in the article itself, with a dated note at the foot describing what changed. Articles are not silently rewritten and are not deleted to hide a mistake.</p>
+          <h2>Independence</h2>
+          <p>No sponsored posts, no paid placements, no affiliate links. Nothing is published in exchange for consideration of any kind.</p>
+          <h2>Conflicts of interest</h2>
+          <p>Where an article touches on work Guildyard has a stake in, the relationship is disclosed in the article, at the top.</p>
+          <h2>Reader contact</h2>
+          <p>Corrections, disagreements and better evidence are welcome and are read. Not every message can be answered.</p>
+        </div>
+        <hr class="sep" />
+        <RuleLabel tone="ink" align="left">Built on Intent. Focused on Value.</RuleLabel>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+.policy{padding:72px 0 96px}
+.col{max-width:var(--gy-measure-prose);display:flex;flex-direction:column;gap:32px}
+.notice{display:flex;flex-direction:column;gap:4px;padding:var(--gy-space-4);background:var(--gy-status-info-soft);border-radius:var(--gy-radius-md);border-top:3px solid var(--gy-status-info)}
+.notice strong{font:var(--gy-weight-semibold) var(--gy-text-sm)/1.3 var(--gy-font-sans);color:var(--gy-status-info-fg)}
+.notice p{font:var(--gy-type-body-sm);color:var(--gy-ink-700);margin:0}
+.sep{border:0;height:1px;background:var(--gy-line-subtle);width:100%;margin:0}
+</style>

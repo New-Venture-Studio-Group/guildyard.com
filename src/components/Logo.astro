@@ -1,0 +1,19 @@
+---
+/* The approved Guildyard marks, served from the packaged SVGs. Never re-set the
+   wordmark in a live font, and never redraw or recolour a mark. */
+interface Props {
+  variant?: "lockup" | "symbol" | "tagline";
+  tone?: "charcoal" | "ivory" | "copper" | "black";
+  height?: number;
+  title?: string;
+}
+const { variant = "lockup", tone = "charcoal", height, title = "Guildyard LLC" } = Astro.props;
+const FILES: Record<string, Record<string, string>> = {
+  lockup: { charcoal: "guildyard-lockup-charcoal.svg", ivory: "guildyard-lockup-ivory.svg", copper: "guildyard-lockup-copper.svg", black: "guildyard-lockup-black.svg" },
+  symbol: { charcoal: "guildyard-symbol-charcoal.svg", ivory: "guildyard-symbol-ivory.svg", copper: "guildyard-symbol-copper.svg", black: "guildyard-symbol-black.svg" },
+  tagline: { charcoal: "guildyard-tagline-charcoal.svg", ivory: "guildyard-tagline-ivory.svg", copper: "guildyard-tagline-copper.svg", black: "guildyard-tagline-charcoal.svg" }
+};
+const h = height ?? (variant === "symbol" ? 32 : variant === "tagline" ? 14 : 32);
+---
+<img src={`/assets/logo/${FILES[variant][tone]}`} alt={title} height={h}
+  style={`height:${h}px;width:auto;display:block;flex:0 0 auto`} />

@@ -1,0 +1,96 @@
+---
+import Base from "../layouts/Base.astro";
+import Button from "../components/Button.astro";
+import RuleLabel from "../components/RuleLabel.astro";
+import ArticleRow from "../components/ArticleRow.astro";
+import Icon from "../components/Icon.astro";
+import { getArticles } from "../lib/journal";
+
+const latest = (await getArticles()).slice(0, 3);
+
+const MODEL = [
+  ["01", "Ideas are tested, not launched", "An idea earns its next stage by answering a question that was written down before the work began."],
+  ["02", "Each venture keeps its own identity", "Audience, name, offer and commercial model belong to the venture. The parent name stays out of the way."],
+  ["03", "Continuity sits with the parent", "Ownership, records and the decisions already made persist here, so nothing has to be re-argued from scratch."]
+];
+---
+<Base title="Guildyard LLC" section="home">
+  <section class="gy-hero statement">
+    <div class="gy-wrap">
+      <div class="gy-split">
+        <div class="lead">
+          <span class="eyebrow">Guildyard LLC · Texas</span>
+          <h1>Built on Intent.<br />Focused on Value.</h1>
+          <span aria-hidden="true" class="rule"></span>
+          <p class="lede">
+            Guildyard LLC develops and tests practical business ideas, giving each venture the freedom to establish its own audience, identity, and operating model.
+          </p>
+          <Button href="/journal/" variant="primary" size="lg" iconRight="arrow-right">Read the Journal</Button>
+        </div>
+        <aside class="what">
+          <span class="aside-head">What this is</span>
+          <p>
+            A parent company, not an operating brand. Guildyard holds ownership and continuity; the ventures it develops carry their own names, audiences, and commercial models, and are not required to use the Guildyard name publicly.
+          </p>
+          <a href="/about/" class="more">More about the model <Icon name="arrow-right" size={13} /></a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="gy-band model">
+    <div class="gy-wrap">
+      <RuleLabel tone="ink" align="left">How the umbrella works</RuleLabel>
+      <div class="gy-thirds">
+        {MODEL.map(([n, t, b]) => (
+          <div class="part">
+            <span class="num">{n}</span>
+            <h3>{t}</h3>
+            <p>{b}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="journal">
+    <div class="gy-wrap">
+      <div class="journal-head">
+        <div class="journal-intro">
+          <span class="eyebrow">The Guildyard Journal</span>
+          <h2>Original articles and field notes about building, testing, and operating practical business ventures.</h2>
+          <p class="quiet">Free to read. Not a lead magnet.</p>
+        </div>
+        <Button href="/journal/" variant="secondary" size="sm" iconRight="arrow-right">All articles</Button>
+      </div>
+      <div class="listing">
+        {latest.map((entry) => <ArticleRow entry={entry} />)}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+.statement{border-bottom:var(--gy-border-subtle)}
+.lead{display:flex;flex-direction:column;gap:30px;align-items:flex-start}
+.eyebrow{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;color:var(--gy-copper-600)}
+.gy-hero h1{font-family:var(--gy-font-serif);font-weight:var(--gy-weight-semibold);line-height:1.08;letter-spacing:-.014em;color:var(--gy-ink-900);margin:0;max-width:780px}
+.rule{width:44px;height:3px;background:var(--gy-copper-500)}
+.lede{font:var(--gy-type-lede);color:var(--gy-ink-700);margin:0;max-width:var(--gy-measure-lede)}
+.what{border-top:3px solid var(--gy-ink-800);padding-top:22px;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.aside-head{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;color:var(--gy-ink-500)}
+.what p{font:var(--gy-type-prose);color:var(--gy-ink-800);margin:0}
+.more{display:inline-flex;align-items:center;gap:7px;font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;color:var(--gy-copper-600);border-bottom:none}
+.model{background:var(--gy-ink-100)}
+.model .gy-thirds{margin-top:44px}
+.part{display:flex;flex-direction:column;gap:13px;padding-top:18px;border-top:3px solid var(--gy-copper-500)}
+.num{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wide);color:var(--gy-copper-600)}
+.part h3{font:var(--gy-weight-semibold) var(--gy-text-xl)/1.26 var(--gy-font-serif);color:var(--gy-ink-900)}
+.part p{font:var(--gy-type-body);color:var(--gy-ink-700);margin:0}
+.journal{padding:88px 0 96px}
+.journal-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.journal-intro{display:flex;flex-direction:column;gap:14px;max-width:640px}
+.journal-intro h2{font:var(--gy-weight-semibold) var(--gy-text-3xl)/1.2 var(--gy-font-serif);letter-spacing:var(--gy-tracking-tight);color:var(--gy-ink-900)}
+.quiet{font:var(--gy-type-body);color:var(--gy-text-secondary);margin:0}
+.listing{margin-top:40px;border-top:1px solid var(--gy-ink-800)}
+</style>

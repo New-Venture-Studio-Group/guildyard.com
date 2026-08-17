@@ -1,0 +1,58 @@
+---
+import Base from "../layouts/Base.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import Button from "../components/Button.astro";
+---
+<Base title="About · Guildyard LLC" section="about"
+  description="Guildyard LLC develops and tests independent ventures and brands.">
+  <section class="about">
+    <div class="gy-wrap">
+      <div class="gy-split is-prose">
+        <div class="col">
+          <SectionHeading eyebrow="About" level={1}
+            title="Guildyard LLC develops and tests independent ventures and brands." />
+          <div class="gy-prose">
+            <p>Guildyard LLC is a Texas umbrella company used to develop and test independent business ideas and DBAs. It is a parent company rather than an operating brand: it does not sell a single defined product or service to a fixed customer segment.</p>
+            <h2>What the umbrella provides</h2>
+            <p>Continuity and ownership. Records, decisions and accumulated judgement live at the parent, so an idea that reaches its next stage does not begin from nothing. An idea that stops does so on the record.</p>
+            <h2>What each venture keeps</h2>
+            <p>Everything customer-facing. A venture establishes its own name, audience, website, offer and commercial model, and is not required to use the Guildyard name publicly.</p>
+            <h2>What "Built on Intent. Focused on Value." means</h2>
+            <p>Intent is written before work begins: the claim being tested, the evidence that would settle it, and the date it will be looked at. Value is the test applied afterwards: whether the result was worth what it cost to learn. "Built" here refers to businesses, systems, brands, and operating ideas, not physical structures.</p>
+            <h2>What Guildyard is not</h2>
+            <p>Not a construction or contracting company, a real-estate developer, an architecture or engineering practice, an agency, a fund, an incubator, or a software company. Where those readings have been inferred from the mark's geometry, they are wrong.</p>
+          </div>
+        </div>
+        <aside class="sidebar">
+          <div class="block topped">
+            <span class="label">In one line</span>
+            <p class="prose-line">Guildyard LLC develops and tests independent ventures and brands.</p>
+          </div>
+          <div class="block">
+            <span class="label">Registered</span>
+            <span class="value">Texas, United States</span>
+          </div>
+          <hr />
+          <div class="block">
+            <span class="label">The Journal</span>
+            <p>Most of the depth on this site is published there, free to read.</p>
+            <Button href="/journal/" variant="secondary" size="sm" iconRight="arrow-right">Read the Journal</Button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+.about{padding:72px 0 96px}
+.col{display:flex;flex-direction:column;gap:32px}
+.sidebar{display:flex;flex-direction:column;gap:26px;position:sticky;top:24px}
+.block{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.topped{padding-top:18px;border-top:3px solid var(--gy-ink-800)}
+.label{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;color:var(--gy-ink-500)}
+.prose-line{font:var(--gy-type-prose);color:var(--gy-ink-800);margin:0}
+.value{font:var(--gy-type-body);color:var(--gy-ink-700)}
+.sidebar p{font:var(--gy-type-body);color:var(--gy-text-secondary);margin:0}
+.sidebar hr{border:0;height:1px;background:var(--gy-line-subtle);width:100%;margin:0}
+</style>

@@ -1,0 +1,79 @@
+---
+import Base from "../../layouts/Base.astro";
+import Button from "../../components/Button.astro";
+import ArticleRow from "../../components/ArticleRow.astro";
+import ArticleMeta from "../../components/ArticleMeta.astro";
+import Icon from "../../components/Icon.astro";
+import { getArticles, readingTime } from "../../lib/journal";
+
+const all = await getArticles();
+const lead = all[0];
+const rest = all.slice(1);
+---
+<Base title="The Guildyard Journal" section="journal"
+  description="Original articles and field notes about building, testing, and operating practical business ventures.">
+  <section class="masthead">
+    <div class="gy-wrap">
+      <div class="intro">
+        <span class="kicker">The Guildyard Journal</span>
+        <p class="lede">
+          Original articles and field notes about building, testing, and operating practical business ventures. Free to read, published when there is something worth reporting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {lead && (
+    <section class="lead-wrap">
+      <div class="gy-wrap">
+        <article class="gy-split is-lead lead">
+          <div class="lead-body">
+            <ArticleMeta date={lead.data.date} category={lead.data.category} readingTime={readingTime(lead)} />
+            <h2><a href={`/journal/${lead.id}/`}>{lead.data.title}</a></h2>
+            <p class="lede">{lead.data.lede}</p>
+            <a href={`/journal/${lead.id}/`} class="read">Read the article <Icon name="arrow-right" size={13} /></a>
+          </div>
+          <aside class="gy-aside-left">
+            <span class="kind">{lead.data.kind}</span>
+            <p>Essays argue a position at length. Field notes are shorter and report a single observation.</p>
+          </aside>
+        </article>
+      </div>
+    </section>
+  )}
+
+  <section class="rest">
+    <div class="gy-wrap">
+      {rest.length > 0 ? (
+        <div class="listing">{rest.map((entry) => <ArticleRow entry={entry} />)}</div>
+      ) : (
+        <p class="empty">Nothing else published yet.</p>
+      )}
+      <div class="more-wrap">
+        <Button href="/archive/" variant="secondary" iconRight="arrow-right">Browse the full archive</Button>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+.masthead{padding:72px 0 40px}
+.intro{display:flex;flex-direction:column;gap:18px;max-width:var(--gy-measure-lede)}
+.kicker{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-widest);text-transform:uppercase;color:var(--gy-copper-600)}
+.lede{font:var(--gy-type-lede);color:var(--gy-ink-700);margin:0}
+.lead-wrap{padding:8px 0 56px}
+.lead{border-top:3px solid var(--gy-ink-800);padding-top:32px}
+.lead-body{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.lead h2{font:var(--gy-weight-semibold) var(--gy-text-4xl)/1.14 var(--gy-font-serif);letter-spacing:-.012em;max-width:720px}
+.lead h2 a{color:var(--gy-ink-900);text-decoration:none;border-bottom:none;transition:var(--gy-transition-color)}
+.lead h2 a:hover{color:var(--gy-copper-700)}
+.lead .lede{max-width:680px}
+.read{display:inline-flex;align-items:center;gap:8px;font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;color:var(--gy-copper-600);border-bottom:none}
+.gy-aside-left{display:flex;flex-direction:column;gap:10px}
+.kind{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;color:var(--gy-ink-500)}
+.gy-aside-left p{font:var(--gy-type-body);color:var(--gy-text-secondary);margin:0}
+.rest{padding-bottom:96px}
+.listing{border-top:1px solid var(--gy-ink-800)}
+.empty{font:var(--gy-type-body);color:var(--gy-text-secondary)}
+.more-wrap{display:flex;justify-content:center;margin-top:40px}
+</style>

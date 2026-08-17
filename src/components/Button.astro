@@ -1,0 +1,39 @@
+---
+/* Uppercase, wide-tracked mono, 3px radius. Charcoal is primary; the copper
+   accent is reserved for the single most important action on a view. */
+import Icon from "./Icon.astro";
+interface Props {
+  href?: string;
+  variant?: "primary" | "accent" | "secondary" | "ghost" | "inverse";
+  size?: "sm" | "md" | "lg";
+  iconRight?: "arrow-right" | "arrow-left" | "external-link" | "rss";
+  class?: string;
+}
+const { href, variant = "primary", size = "md", iconRight, class: cls = "" } = Astro.props;
+const Tag = href ? "a" : "button";
+const iconSize = size === "sm" ? 14 : size === "lg" ? 18 : 16;
+---
+<Tag href={href} type={href ? undefined : "button"} class={`gy-btn gy-btn-${variant} gy-btn-${size} ${cls}`}>
+  <slot />
+  {iconRight && <Icon name={iconRight} size={iconSize} />}
+</Tag>
+
+<style>
+.gy-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:var(--gy-radius-sm);cursor:pointer;text-decoration:none;text-transform:uppercase;white-space:nowrap;box-sizing:border-box;border:1px solid transparent;transition:var(--gy-transition-color)}
+.gy-btn:focus-visible{outline:none;box-shadow:var(--gy-focus-ring)}
+.gy-btn-sm{height:32px;padding:0 13px;font:var(--gy-weight-semibold) var(--gy-text-2xs)/1 var(--gy-font-mono);letter-spacing:var(--gy-tracking-wider);gap:7px}
+.gy-btn-md{height:42px;padding:0 19px;font:var(--gy-weight-semibold) var(--gy-text-xs)/1 var(--gy-font-mono);letter-spacing:var(--gy-tracking-wider)}
+.gy-btn-lg{height:52px;padding:0 27px;font:var(--gy-weight-semibold) var(--gy-text-sm)/1 var(--gy-font-mono);letter-spacing:var(--gy-tracking-wider);gap:11px}
+.gy-btn-primary{background:var(--gy-action-primary-bg);color:var(--gy-action-primary-fg)}
+.gy-btn-primary:hover{background:var(--gy-action-primary-bg-hover)}
+.gy-btn-primary:active{background:var(--gy-action-primary-bg-active)}
+.gy-btn-accent{background:var(--gy-action-accent-bg);color:var(--gy-action-accent-fg)}
+.gy-btn-accent:hover{background:var(--gy-action-accent-bg-hover)}
+.gy-btn-accent:active{background:var(--gy-action-accent-bg-active)}
+.gy-btn-secondary{background:transparent;color:var(--gy-ink-800);border-color:var(--gy-ink-800)}
+.gy-btn-secondary:hover{background:var(--gy-ink-800);color:var(--gy-ink-50)}
+.gy-btn-ghost{background:transparent;color:var(--gy-ink-700)}
+.gy-btn-ghost:hover{background:var(--gy-action-quiet-bg-hover)}
+.gy-btn-inverse{background:transparent;color:var(--gy-ink-50);border-color:rgba(246,243,238,.45)}
+.gy-btn-inverse:hover{background:var(--gy-ink-50);color:var(--gy-ink-900)}
+</style>
