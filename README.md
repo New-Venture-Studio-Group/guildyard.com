@@ -8,6 +8,15 @@ can be copied over and committed.
 
 Do not invent ventures, customers, results, people, or addresses.
 
+## Provenance note
+
+An earlier export (commit 288d710) regressed two copy decisions that had been
+made in this repo: it reverted Journal publication dates to placeholder values
+and reintroduced em dashes into several article, home and About lines. Both have
+been absorbed into the design system as standards, and this export restores the
+repo's versions. The design system is upstream for structure and styling; **the
+repo is upstream for published facts like article dates.**
+
 ## What changed in this export
 
 1. **`mobile.css` — responsive layer rebuilt.** Fixes a live layout bug: on the
@@ -28,6 +37,10 @@ Do not invent ventures, customers, results, people, or addresses.
    stacked widths it filled the column and read as a text input. Wrappers now set
    `align-items: flex-start`.
 5. **Viewport meta** present on all six pages.
+6. **Copy restored and standardised.** Journal dates are the real publication
+   dates (29 July to 16 August 2026), and no em dashes appear in any published
+   copy. Both are now house rules in the design system's `readme.md` §3, so a
+   future export cannot silently undo them.
 
 ## Files
 
@@ -50,4 +63,6 @@ Do not invent ventures, customers, results, people, or addresses.
   and re-export, or the two will drift apart again.
 - **Page composition uses the `.gy-*` classes; components are inline-styled.**
   Keep that division.
-- The wordmark is artwork — never re-set it in a live font.
+- The wordmark is artwork; never re-set it in a live font.
+- **No em dashes in published copy.** Use a comma, colon, semicolon or full stop.
+- **Article dates in `data.jsx` are facts.** Never regenerate or shift them.

@@ -1,6 +1,9 @@
 /* Opening Journal pieces published with the site. These are editorial
    examples, not a back-catalog. No ventures, customers, results, people,
-   addresses or company history are invented. */
+   addresses or company history are invented.
+
+   COPY STANDARD: no em dashes in body copy. Use a comma, a colon, a semicolon
+   or a full stop. See readme.md section 3. */
 const GY_CATEGORIES = ["Venture building", "Market evidence", "Operating systems", "Brand architecture", "Decision making"];
 
 const GY_ARTICLES = [

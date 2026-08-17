@@ -14,7 +14,7 @@ function AboutView({ onNavigate }) {
               <p>Continuity and ownership. Records, decisions and accumulated judgement live at the parent, so an idea that reaches its next stage does not begin from nothing. An idea that stops does so on the record.</p>
               <h2>What each venture keeps</h2>
               <p>Everything customer-facing. A venture establishes its own name, audience, website, offer and commercial model, and is not required to use the Guildyard name publicly.</p>
-              <h2>What “Built on Intent. Focused on Value.” means</h2>
+              <h2>What "Built on Intent. Focused on Value." means</h2>
               <p>Intent is written before work begins: the claim being tested, the evidence that would settle it, and the date it will be looked at. Value is the test applied afterwards: whether the result was worth what it cost to learn. "Built" here refers to businesses, systems, brands, and operating ideas, not physical structures.</p>
               <h2>What Guildyard is not</h2>
               <p>Not a construction or contracting company, a real-estate developer, an architecture or engineering practice, an agency, a fund, an incubator, or a software company. Where those readings have been inferred from the mark's geometry, they are wrong.</p>
