@@ -1781,7 +1781,7 @@ function NavBar({
       display: "flex",
       alignItems: "center",
       gap: "var(--gy-space-10)",
-      height: 72,
+      height: 84,
       padding: "0 var(--gy-space-10)",
       boxSizing: "border-box",
       background: dark ? "var(--gy-surface-inverse)" : "var(--gy-ink-0)",
@@ -1791,7 +1791,7 @@ function NavBar({
   }, rest), /*#__PURE__*/React.createElement(__ds_scope.Logo, {
     variant: "lockup",
     tone: dark ? "ivory" : "charcoal",
-    height: 24
+    height: 32
   }), /*#__PURE__*/React.createElement("nav", {
     style: {
       display: "flex",
