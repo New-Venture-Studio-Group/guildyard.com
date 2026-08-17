@@ -11,11 +11,11 @@ function AboutView({ onNavigate }) {
             <Prose>
               <p>Guildyard LLC is a Texas umbrella company used to develop and test independent business ideas and DBAs. It is a parent company rather than an operating brand: it does not sell a single defined product or service to a fixed customer segment.</p>
               <h2>What the umbrella provides</h2>
-              <p>Continuity and ownership. Records, decisions and accumulated judgement live at the parent, so an idea that reaches its next stage does not begin from nothing — and an idea that stops does so on the record.</p>
+              <p>Continuity and ownership. Records, decisions and accumulated judgement live at the parent, so an idea that reaches its next stage does not begin from nothing. An idea that stops does so on the record.</p>
               <h2>What each venture keeps</h2>
               <p>Everything customer-facing. A venture establishes its own name, audience, website, offer and commercial model, and is not required to use the Guildyard name publicly.</p>
               <h2>What “Built on Intent. Focused on Value.” means</h2>
-              <p>Intent is written before work begins: the claim being tested, the evidence that would settle it, and the date it will be looked at. Value is the test applied afterwards — whether the result was worth what it cost to learn. “Built” here refers to businesses, systems, brands and operating ideas, not physical structures.</p>
+              <p>Intent is written before work begins: the claim being tested, the evidence that would settle it, and the date it will be looked at. Value is the test applied afterwards: whether the result was worth what it cost to learn. "Built" here refers to businesses, systems, brands, and operating ideas, not physical structures.</p>
               <h2>What Guildyard is not</h2>
               <p>Not a construction or contracting company, a real-estate developer, an architecture or engineering practice, an agency, a fund, an incubator, or a software company. Where those readings have been inferred from the mark's geometry, they are wrong.</p>
             </Prose>
@@ -54,7 +54,7 @@ function PolicyView({ onNavigate }) {
             <h2>What we publish</h2>
             <p>Articles and field notes on venture building, market evidence, operating systems, brand architecture and disciplined business decision-making. Essays argue a position at length; field notes report a single observation and stay short.</p>
             <h2>Who it is for</h2>
-            <p>Independent operators, founders, small-business builders, and product and operations leaders — anyone evaluating or building a practical venture.</p>
+            <p>Independent operators, founders, small-business builders, and product and operations leaders. Anyone evaluating or building a practical venture.</p>
             <h2>Evidence and sources</h2>
             <p>Claims that rest on outside work cite it and link to it. Where a claim rests on our own experience, it says so plainly rather than borrowing the authority of research.</p>
             <h2>Corrections</h2>

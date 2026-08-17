@@ -26,10 +26,10 @@ function ArticleView({ article, onNavigate, onOpenArticle }) {
 
           <div className="gy-split is-prose" style={{ marginTop: 48 }}>
             <Prose>
-              <p>The first person who reads an offer is not a customer. They are a measurement — and the measurement is usually thrown away, because it arrives before anyone has decided what it would mean.</p>
+              <p>The first person who reads an offer is not a customer. They are a measurement, and the measurement is usually thrown away, because it arrives before anyone has decided what it would mean.</p>
               <h2>Decide what the reader is being asked</h2>
               <p>A reader can be asked for attention, for an opinion, or for money. These are different tests with different failure modes, and running them together produces a result that cannot be interpreted. Pick one, and write down which.</p>
-              <p>The temptation is to ask for all three at once — a page that explains, persuades and sells — on the grounds that a visitor is expensive and should be fully used. That reasoning is sound for a business with a known offer. For a venture still establishing whether the offer exists, it destroys the only information the visit could have produced.</p>
+              <p>The temptation is to ask for all three at once: a page that explains, persuades, and sells. That is usually justified on the grounds that a visitor is expensive and should be fully used. That reasoning is sound for a business with a known offer. For a venture still establishing whether the offer exists, it destroys the only information the visit could have produced.</p>
               <h4>Field note</h4>
               <ul>
                 <li>Write the claim the page is testing, in one sentence.</li>
@@ -37,7 +37,7 @@ function ArticleView({ article, onNavigate, onOpenArticle }) {
                 <li>Set the date you will look at that number.</li>
               </ul>
               <h2>Interest is not evidence</h2>
-              <p>Encouragement is the cheapest thing a reader can give, and the most likely thing to be offered. Evidence costs the reader something — a reply, a schedule, a payment, a name they have to defend later.</p>
+              <p>Encouragement is the cheapest thing a reader can give, and the most likely thing to be offered. Evidence costs the reader something: a reply, a schedule, a payment, a name they have to defend later.</p>
               <blockquote><p>Evidence beats enthusiasm, and a written date beats both.</p></blockquote>
               <p>This is why a small, specific response is worth more than a large, vague one. Ten people who each did something inconvenient tell you more than a thousand who nodded.</p>
               <hr />
