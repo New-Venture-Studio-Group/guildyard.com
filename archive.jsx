@@ -12,9 +12,9 @@ function ArchiveView({ onOpenArticle }) {
     ...window.GY_CATEGORIES.map((c) => ({ id: c, label: c, count: all.filter((a) => a.category === c).length }))];
   const q = query.trim().toLowerCase();
   const filtered = all.filter((a) => {
-    if (cat !== "all" && a.category !== cat) return false;
+    if (!q && cat !== "all" && a.category !== cat) return false;
     if (!q) return true;
-    return [a.title, a.lede, a.category, a.kind].join(" ").toLowerCase().indexOf(q) !== -1;
+    return [a.title, a.lede, a.category, a.kind, a.date].join(" ").toLowerCase().indexOf(q) !== -1;
   });
   const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const current = Math.min(page, pageCount);
@@ -37,7 +37,7 @@ function ArchiveView({ onOpenArticle }) {
           </div>
           <div className="gy-search">
             <Field label="Search the archive" htmlFor="arch-q">
-              <Input id="arch-q" size="sm" icon="search" placeholder="Keyword or category" value={query} onChange={(e) => { setQuery(e.target.value); setPage(1); }} />
+              <Input id="arch-q" size="sm" icon="search" placeholder="Keyword or category" value={query} onChange={(e) => { setQuery(e.target.value); setCat("all"); setPage(1); }} />
             </Field>
           </div>
         </div>
