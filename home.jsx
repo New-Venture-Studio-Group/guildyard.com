@@ -23,7 +23,7 @@ function HomeView({ onNavigate, onOpenArticle }) {
             <aside style={{ borderTop: "3px solid var(--gy-ink-800)", paddingTop: 22, display: "flex", flexDirection: "column", gap: 18 }}>
               <span style={{ font: "var(--gy-type-meta)", letterSpacing: "var(--gy-tracking-wider)", textTransform: "uppercase", color: "var(--gy-ink-500)" }}>What this is</span>
               <p style={{ font: "var(--gy-type-prose)", color: "var(--gy-ink-800)", margin: 0 }}>
-                A parent company, not an operating brand. Guildyard holds ownership and continuity; the ventures it develops carry their own names, audiences, and commercial models, and are not required to use the Guildyard name publicly.
+                A parent company, not an operating brand. Guildyard holds ownership and continuity; the ventures it develops carry their own names, audiences and commercial models — and are not required to use the Guildyard name publicly.
               </p>
               <a href="#" onClick={(e) => { e.preventDefault(); onNavigate("about"); }} style={{ font: "var(--gy-type-meta)", letterSpacing: "var(--gy-tracking-wider)", textTransform: "uppercase", color: "var(--gy-copper-600)", borderBottom: "none", display: "inline-flex", alignItems: "center", gap: 7 }}>
                 More about the model <Icon name="arrow-right" size={13} />

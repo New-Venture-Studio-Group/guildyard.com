@@ -1,6 +1,6 @@
 const { Tabs, Pagination, Input, Field, Divider, ArticleMeta } = window.GuildyardDesignSystem_59975b;
 
-const PAGE_SIZE = 4;
+const GY_PAGE_SIZE = 4;
 
 function ArchiveView({ onOpenArticle }) {
   const { Container } = window;
@@ -16,14 +16,11 @@ function ArchiveView({ onOpenArticle }) {
     if (!q) return true;
     return [a.title, a.lede, a.category, a.kind, a.date].join(" ").toLowerCase().indexOf(q) !== -1;
   });
-  const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const pageCount = Math.max(1, Math.ceil(filtered.length / GY_PAGE_SIZE));
   const current = Math.min(page, pageCount);
-  const pageRows = filtered.slice((current - 1) * PAGE_SIZE, current * PAGE_SIZE);
+  const pageRows = filtered.slice((current - 1) * GY_PAGE_SIZE, current * GY_PAGE_SIZE);
   const years = [...new Set(pageRows.map((a) => a.iso.slice(0, 4)))].sort().reverse();
-  const goPage = (n) => {
-    setPage(n);
-    window.scrollTo(0, 0);
-  };
+  const goPage = (n) => { setPage(n); window.scrollTo(0, 0); };
   return (
     <section style={{ padding: "72px 0 96px" }}>
       <Container>

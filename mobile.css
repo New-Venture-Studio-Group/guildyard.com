@@ -1,110 +1,84 @@
-/* Mobile-first layout. Multi-column only on wide screens. */
+/* GENERATED — do not edit here.
+   Source of truth: tokens/responsive.css in the Guildyard design system.
+   Kept at this filename so the repo's existing import path is unchanged.
+   Re-export from the design system rather than editing this file. */
 
-.gy-wrap {
-  width: 100%;
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
+/* Responsive layout layer.
+   Adopted from the published guildyard.com site (New-Venture-Studio-Group/guildyard.com,
+   mobile.css) so the system and the live site share one set of breakpoint rules.
 
-.gy-header {
-  background: var(--gy-ink-0);
-  border-bottom: var(--gy-border-subtle);
-}
-.gy-header-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px 16px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-}
-.gy-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 16px;
-  flex: 1 1 100%;
-  order: 3;
-}
-.gy-nav a {
-  padding-bottom: 3px;
-  border-bottom: 2px solid transparent;
-  font: var(--gy-type-meta);
-  letter-spacing: var(--gy-tracking-wider);
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--gy-ink-500);
-}
-.gy-nav a.is-active {
-  border-bottom-color: var(--gy-copper-500);
-  color: var(--gy-ink-900);
-}
-.gy-header-cta {
-  margin-left: auto;
+   This is the ONE part of the system that is class-based rather than inline:
+   media queries cannot be expressed inline. Components stay inline-styled;
+   PAGE COMPOSITION uses these classes.
+
+   Mobile-first. A single breakpoint at 800px (--gy-breakpoint-md): one column
+   below it, the authored multi-column splits above it. */
+
+:root{
+  --gy-breakpoint-sm:480px;
+  --gy-breakpoint-md:800px;  /* the only breakpoint the system actually uses */
+  --gy-breakpoint-lg:1160px; /* equals the content max width */
 }
 
-.gy-split,
-.gy-thirds,
-.gy-article-row,
-.gy-archive-row,
-.gy-footer-grid,
-.gy-more {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  align-items: start;
-}
-.gy-article-row,
-.gy-archive-row {
-  gap: 6px;
-  padding: 20px 0;
-  border-bottom: var(--gy-border-subtle);
-  cursor: pointer;
-}
-.gy-search { width: 100%; }
-.gy-hero { padding: 48px 0 40px !important; }
-.gy-band { padding: 40px 0 !important; }
-.gy-hero h1 { font-size: 36px !important; line-height: 1.12 !important; }
-.gy-aside-left {
-  border-left: none !important;
-  padding-left: 0 !important;
-  border-top: 3px solid var(--gy-ink-800);
-  padding-top: 18px;
+/* --- Page container --- */
+.gy-wrap{width:100%;max-width:var(--gy-container-site);margin:0 auto;padding:0 20px;box-sizing:border-box}
+
+/* --- Site header (wrapping; nav drops to its own row on small screens) --- */
+.gy-header{background:var(--gy-ink-0);border-bottom:var(--gy-border-subtle)}
+.gy-header-inner{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;padding-top:16px;padding-bottom:16px}
+.gy-nav{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;flex:1 1 100%;order:3}
+.gy-nav a{padding-bottom:3px;border-bottom:2px solid transparent;font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;text-decoration:none;color:var(--gy-ink-500);transition:var(--gy-transition-color)}
+.gy-nav a:hover{color:var(--gy-ink-800)}
+.gy-nav a.is-active{border-bottom-color:var(--gy-copper-500);color:var(--gy-ink-900)}
+.gy-header-cta{margin-left:auto}
+
+/* --- NavBar component: layout only; the component owns its own colours --- */
+.gy-navbar-inner{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;width:100%}
+.gy-navbar-nav{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;flex:1 1 100%;order:3}
+.gy-navbar-cta{margin-left:auto}
+
+/* --- Layout primitives: single column until 800px --- */
+.gy-split,.gy-thirds,.gy-article-row,.gy-archive-row,.gy-footer-grid,.gy-more{display:grid;grid-template-columns:1fr;gap:var(--gy-space-6);align-items:start}
+.gy-article-row,.gy-archive-row{gap:6px;padding:20px 0;border-bottom:var(--gy-border-subtle);cursor:pointer}
+.gy-search{width:100%}
+
+/* --- Section rhythm compresses on small screens --- */
+.gy-hero{padding:48px 0 40px !important}
+.gy-band{padding:40px 0 !important}
+.gy-hero h1{font-size:32px !important;line-height:1.12 !important}
+
+/* --- A left-ruled aside becomes a top-ruled block when stacked --- */
+.gy-aside-left{border-left:none !important;padding-left:0 !important;border-top:3px solid var(--gy-ink-800);padding-top:18px}
+
+@media (min-width:800px){
+  .gy-wrap{padding:0 var(--gy-space-10)}
+  .gy-header-inner{flex-wrap:nowrap;min-height:84px;gap:28px;padding-top:14px;padding-bottom:14px}
+  .gy-nav{order:0;flex:1 1 auto;flex-wrap:nowrap;gap:28px}
+  .gy-navbar-inner{flex-wrap:nowrap;gap:var(--gy-space-10)}
+  .gy-navbar-nav{order:0;flex:1 1 auto;flex-wrap:nowrap;gap:var(--gy-space-8)}
+  .gy-split{grid-template-columns:1.25fr .75fr;gap:72px}
+  .gy-split.is-lead{grid-template-columns:1.35fr .65fr;gap:64px}
+  /* is-prose deliberately stays stacked here: between 800 and 1080 there is not
+     enough width for a 680px measure AND a usable sidebar. See the 1080 query. */
+  .gy-split.is-prose{grid-template-columns:1fr;gap:var(--gy-space-8)}
+  .gy-thirds{grid-template-columns:repeat(3,1fr);gap:40px}
+  .gy-more{grid-template-columns:repeat(3,1fr);gap:var(--gy-space-8)}
+  .gy-article-row{grid-template-columns:132px 1fr auto;gap:28px;padding:22px 0}
+  .gy-archive-row{grid-template-columns:112px 1fr 190px 92px;gap:var(--gy-space-6);padding:var(--gy-space-4) 0}
+  .gy-footer-grid{grid-template-columns:1.6fr 1fr 1fr;gap:56px}
+  .gy-search{width:280px}
+  .gy-hero{padding:112px 0 96px !important}
+  .gy-band{padding:88px 0 !important}
+  .gy-hero h1{font-size:clamp(42px,4.9vw,64px) !important}
+  .gy-aside-left{border-top:none;padding-top:0;border-left:var(--gy-border-default) !important;padding-left:28px !important}
 }
 
-@media (min-width: 800px) {
-  .gy-wrap { padding: 0 40px; }
-  .gy-header-inner {
-    flex-wrap: nowrap;
-    min-height: 84px;
-    gap: 28px;
-    padding-top: 14px;
-    padding-bottom: 14px;
-  }
-  .gy-nav {
-    order: 0;
-    flex: 1 1 auto;
-    flex-wrap: nowrap;
-    gap: 28px;
-  }
-  .gy-split { grid-template-columns: 1.25fr .75fr; gap: 72px; }
-  .gy-split.is-lead { grid-template-columns: 1.35fr .65fr; gap: 64px; }
-  .gy-split.is-prose { grid-template-columns: minmax(0, 680px) 1fr; gap: 72px; }
-  .gy-thirds { grid-template-columns: repeat(3, 1fr); gap: 40px; }
-  .gy-more { grid-template-columns: repeat(3, 1fr); gap: 32px; }
-  .gy-article-row { grid-template-columns: 132px 1fr auto; gap: 28px; padding: 22px 0; }
-  .gy-archive-row { grid-template-columns: 112px 1fr 190px 92px; gap: 24px; padding: 16px 0; }
-  .gy-footer-grid { grid-template-columns: 1.6fr 1fr 1fr; gap: 56px; }
-  .gy-search { width: 280px; }
-  .gy-hero { padding: 112px 0 96px !important; }
-  .gy-band { padding: 88px 0 !important; }
-  .gy-hero h1 { font-size: clamp(42px, 4.9vw, 64px) !important; }
-  .gy-aside-left {
-    border-top: none;
-    padding-top: 0;
-    border-left: var(--gy-border-default) !important;
-    padding-left: 28px !important;
-  }
+/* The prose + sidebar split needs more room than the other layouts: the measure
+   is fixed at 680px, so the sidebar must have its own floor rather than taking
+   whatever is left. Below this it stays stacked. */
+@media (min-width:1080px){
+  .gy-split.is-prose{grid-template-columns:minmax(0,var(--gy-measure-prose)) minmax(220px,1fr);gap:56px}
+}
+@media (min-width:1240px){
+  .gy-split.is-prose{gap:72px}
 }

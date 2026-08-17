@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"GuildyardDesignSystem_59975b","components":[{"name":"Logo","sourcePath":"components/brand/Logo.jsx"},{"name":"RuleLabel","sourcePath":"components/brand/RuleLabel.jsx"},{"name":"SectionHeading","sourcePath":"components/brand/SectionHeading.jsx"},{"name":"AbstractField","sourcePath":"components/core/AbstractField.jsx"},{"name":"ArticleMeta","sourcePath":"components/core/ArticleMeta.jsx"},{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Divider","sourcePath":"components/core/Divider.jsx"},{"name":"Figure","sourcePath":"components/core/Figure.jsx"},{"name":"GY_ICON_CDN","sourcePath":"components/core/Icon.jsx"},{"name":"GY_ICONS","sourcePath":"components/core/Icon.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"IconButton","sourcePath":"components/core/IconButton.jsx"},{"name":"Prose","sourcePath":"components/core/Prose.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"Alert","sourcePath":"components/feedback/Alert.jsx"},{"name":"Dialog","sourcePath":"components/feedback/Dialog.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Tooltip","sourcePath":"components/feedback/Tooltip.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"Field","sourcePath":"components/forms/Field.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"Radio","sourcePath":"components/forms/Radio.jsx"},{"name":"Select","sourcePath":"components/forms/Select.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"Textarea","sourcePath":"components/forms/Textarea.jsx"},{"name":"Breadcrumbs","sourcePath":"components/navigation/Breadcrumbs.jsx"},{"name":"NavBar","sourcePath":"components/navigation/NavBar.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"}],"sourceHashes":{"components/brand/Logo.jsx":"76bc664e68c2","components/brand/RuleLabel.jsx":"afa3a82449f9","components/brand/SectionHeading.jsx":"90f7b5c3bd94","components/core/AbstractField.jsx":"3abc243aa5cd","components/core/ArticleMeta.jsx":"7d2512051056","components/core/Badge.jsx":"52e94d021771","components/core/Button.jsx":"04516f8eee8c","components/core/Card.jsx":"b8d9fe9e7994","components/core/Divider.jsx":"904861ea348d","components/core/Figure.jsx":"31e48c1c1779","components/core/Icon.jsx":"806e42de7659","components/core/IconButton.jsx":"11c971b78af5","components/core/Prose.jsx":"5a95336cc86d","components/core/Tag.jsx":"ccc10a69d274","components/feedback/Alert.jsx":"f5f993333c49","components/feedback/Dialog.jsx":"621ab14616c2","components/feedback/Toast.jsx":"7ef886f70cf0","components/feedback/Tooltip.jsx":"81ea315dc8e7","components/forms/Checkbox.jsx":"1dec34431b8e","components/forms/Field.jsx":"5d3b6fe3af64","components/forms/Input.jsx":"fb03053f01d6","components/forms/Radio.jsx":"9b1f57427900","components/forms/Select.jsx":"618d05370bcf","components/forms/Switch.jsx":"8c9e18bd87dc","components/forms/Textarea.jsx":"aabb911f5562","components/navigation/Breadcrumbs.jsx":"06cdd0e185c8","components/navigation/NavBar.jsx":"a69845d59443","components/navigation/Pagination.jsx":"fbcae8a3b1ff","components/navigation/Tabs.jsx":"ab3ff7f65e3e","guidelines/image-slot.js":"fff26d081c8d","ui_kits/guildyard-site/app.jsx":"8e3164c27f85","ui_kits/guildyard-site/archive.jsx":"2ab13953a19f","ui_kits/guildyard-site/article.jsx":"f44ddaba4de8","ui_kits/guildyard-site/data.jsx":"15b6a8aa825f","ui_kits/guildyard-site/home.jsx":"931d4374f5f8","ui_kits/guildyard-site/journal.jsx":"ea4a9ad368fd","ui_kits/guildyard-site/pages.jsx":"06c8410aa076","ui_kits/guildyard-site/site-parts.jsx":"8d1f26a1e6e2"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"GuildyardDesignSystem_59975b","components":[{"name":"Logo","sourcePath":"components/brand/Logo.jsx"},{"name":"RuleLabel","sourcePath":"components/brand/RuleLabel.jsx"},{"name":"SectionHeading","sourcePath":"components/brand/SectionHeading.jsx"},{"name":"AbstractField","sourcePath":"components/core/AbstractField.jsx"},{"name":"ArticleMeta","sourcePath":"components/core/ArticleMeta.jsx"},{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Divider","sourcePath":"components/core/Divider.jsx"},{"name":"Figure","sourcePath":"components/core/Figure.jsx"},{"name":"GY_ICON_CDN","sourcePath":"components/core/Icon.jsx"},{"name":"GY_ICONS","sourcePath":"components/core/Icon.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"IconButton","sourcePath":"components/core/IconButton.jsx"},{"name":"Prose","sourcePath":"components/core/Prose.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"Alert","sourcePath":"components/feedback/Alert.jsx"},{"name":"Dialog","sourcePath":"components/feedback/Dialog.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Tooltip","sourcePath":"components/feedback/Tooltip.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"Field","sourcePath":"components/forms/Field.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"Radio","sourcePath":"components/forms/Radio.jsx"},{"name":"Select","sourcePath":"components/forms/Select.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"Textarea","sourcePath":"components/forms/Textarea.jsx"},{"name":"Breadcrumbs","sourcePath":"components/navigation/Breadcrumbs.jsx"},{"name":"NavBar","sourcePath":"components/navigation/NavBar.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"}],"sourceHashes":{"components/brand/Logo.jsx":"76bc664e68c2","components/brand/RuleLabel.jsx":"afa3a82449f9","components/brand/SectionHeading.jsx":"90f7b5c3bd94","components/core/AbstractField.jsx":"3abc243aa5cd","components/core/ArticleMeta.jsx":"7d2512051056","components/core/Badge.jsx":"52e94d021771","components/core/Button.jsx":"2e7a45be7d5d","components/core/Card.jsx":"b8d9fe9e7994","components/core/Divider.jsx":"904861ea348d","components/core/Figure.jsx":"31e48c1c1779","components/core/Icon.jsx":"806e42de7659","components/core/IconButton.jsx":"11c971b78af5","components/core/Prose.jsx":"5a95336cc86d","components/core/Tag.jsx":"ccc10a69d274","components/feedback/Alert.jsx":"f5f993333c49","components/feedback/Dialog.jsx":"621ab14616c2","components/feedback/Toast.jsx":"7ef886f70cf0","components/feedback/Tooltip.jsx":"81ea315dc8e7","components/forms/Checkbox.jsx":"1dec34431b8e","components/forms/Field.jsx":"5d3b6fe3af64","components/forms/Input.jsx":"fb03053f01d6","components/forms/Radio.jsx":"9b1f57427900","components/forms/Select.jsx":"618d05370bcf","components/forms/Switch.jsx":"8c9e18bd87dc","components/forms/Textarea.jsx":"aabb911f5562","components/navigation/Breadcrumbs.jsx":"06cdd0e185c8","components/navigation/NavBar.jsx":"479311e9c914","components/navigation/Pagination.jsx":"fbcae8a3b1ff","components/navigation/Tabs.jsx":"ab3ff7f65e3e","guidelines/image-slot.js":"fff26d081c8d","ui_kits/guildyard-site/app.jsx":"8e3164c27f85","ui_kits/guildyard-site/archive.jsx":"71c9bb1540d0","ui_kits/guildyard-site/article.jsx":"e84df21ae9da","ui_kits/guildyard-site/data.jsx":"15b6a8aa825f","ui_kits/guildyard-site/home.jsx":"7c273d4ac0a8","ui_kits/guildyard-site/journal.jsx":"34943f68d9cb","ui_kits/guildyard-site/pages.jsx":"3d0cc45f9136","ui_kits/guildyard-site/site-parts.jsx":"506ce811f70e"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -741,6 +741,7 @@ function Button({
       letterSpacing: s.tracking,
       textTransform: "uppercase",
       textDecoration: "none",
+      whiteSpace: "nowrap",
       borderRadius: "var(--gy-radius-sm)",
       cursor: disabled ? "not-allowed" : "pointer",
       transition: "var(--gy-transition-color)",
@@ -1766,6 +1767,8 @@ Object.assign(__ds_scope, { Breadcrumbs });
 // components/navigation/NavBar.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Layout (wrapping, breakpoint behaviour) comes from the .gy-navbar-* classes in
+   tokens/responsive.css; colours stay inline so tone stays self-contained. */
 function NavBar({
   items = [],
   activeId,
@@ -1778,27 +1781,20 @@ function NavBar({
   const dark = tone === "dark";
   return /*#__PURE__*/React.createElement("header", _extends({
     style: {
-      display: "flex",
-      alignItems: "center",
-      gap: "var(--gy-space-10)",
-      height: 84,
-      padding: "0 var(--gy-space-10)",
+      padding: "14px var(--gy-space-10)",
       boxSizing: "border-box",
       background: dark ? "var(--gy-surface-inverse)" : "var(--gy-ink-0)",
       borderBottom: dark ? "var(--gy-border-dark-subtle)" : "var(--gy-border-subtle)",
       ...style
     }
-  }, rest), /*#__PURE__*/React.createElement(__ds_scope.Logo, {
+  }, rest), /*#__PURE__*/React.createElement("div", {
+    className: "gy-navbar-inner"
+  }, /*#__PURE__*/React.createElement(__ds_scope.Logo, {
     variant: "lockup",
     tone: dark ? "ivory" : "charcoal",
-    height: 32
+    height: 26
   }), /*#__PURE__*/React.createElement("nav", {
-    style: {
-      display: "flex",
-      alignItems: "center",
-      gap: "var(--gy-space-8)",
-      flex: 1
-    }
+    className: "gy-navbar-nav"
   }, items.map(it => {
     const active = it.id === activeId;
     return /*#__PURE__*/React.createElement("a", {
@@ -1822,12 +1818,13 @@ function NavBar({
       }
     }, it.label);
   })), actions && /*#__PURE__*/React.createElement("div", {
+    className: "gy-navbar-cta",
     style: {
       display: "flex",
       alignItems: "center",
       gap: "var(--gy-space-3)"
     }
-  }, actions));
+  }, actions)));
 }
 Object.assign(__ds_scope, { NavBar });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/NavBar.jsx", error: String((e && e.message) || e) }); }
@@ -3245,6 +3242,7 @@ const {
   Divider,
   ArticleMeta
 } = window.GuildyardDesignSystem_59975b;
+const GY_PAGE_SIZE = 4;
 function ArchiveView({
   onOpenArticle
 }) {
@@ -3254,6 +3252,7 @@ function ArchiveView({
   const all = window.GY_ARTICLES;
   const [cat, setCat] = React.useState("all");
   const [page, setPage] = React.useState(1);
+  const [query, setQuery] = React.useState("");
   const tabs = [{
     id: "all",
     label: "All",
@@ -3263,8 +3262,20 @@ function ArchiveView({
     label: c,
     count: all.filter(a => a.category === c).length
   }))];
-  const rows = cat === "all" ? all : all.filter(a => a.category === cat);
-  const years = [...new Set(rows.map(a => a.iso.slice(0, 4)))].sort().reverse();
+  const q = query.trim().toLowerCase();
+  const filtered = all.filter(a => {
+    if (!q && cat !== "all" && a.category !== cat) return false;
+    if (!q) return true;
+    return [a.title, a.lede, a.category, a.kind, a.date].join(" ").toLowerCase().indexOf(q) !== -1;
+  });
+  const pageCount = Math.max(1, Math.ceil(filtered.length / GY_PAGE_SIZE));
+  const current = Math.min(page, pageCount);
+  const pageRows = filtered.slice((current - 1) * GY_PAGE_SIZE, current * GY_PAGE_SIZE);
+  const years = [...new Set(pageRows.map(a => a.iso.slice(0, 4)))].sort().reverse();
+  const goPage = n => {
+    setPage(n);
+    window.scrollTo(0, 0);
+  };
   return /*#__PURE__*/React.createElement("section", {
     style: {
       padding: "72px 0 96px"
@@ -3303,10 +3314,8 @@ function ArchiveView({
       color: "var(--gy-text-secondary)",
       margin: 0
     }
-  }, "Newest first. ", rows.length, " articles.")), /*#__PURE__*/React.createElement("div", {
-    style: {
-      width: 280
-    }
+  }, "Newest first. ", filtered.length, " ", filtered.length === 1 ? "article" : "articles", pageCount > 1 ? ". Page " + current + " of " + pageCount : "", ".")), /*#__PURE__*/React.createElement("div", {
+    className: "gy-search"
   }, /*#__PURE__*/React.createElement(Field, {
     label: "Search the archive",
     htmlFor: "arch-q"
@@ -3314,7 +3323,13 @@ function ArchiveView({
     id: "arch-q",
     size: "sm",
     icon: "search",
-    placeholder: "Keyword or category"
+    placeholder: "Keyword or category",
+    value: query,
+    onChange: e => {
+      setQuery(e.target.value);
+      setCat("all");
+      setPage(1);
+    }
   })))), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 36
@@ -3326,7 +3341,13 @@ function ArchiveView({
       setCat(id);
       setPage(1);
     }
-  })), years.map(y => /*#__PURE__*/React.createElement("div", {
+  })), pageRows.length === 0 && /*#__PURE__*/React.createElement("p", {
+    style: {
+      font: "var(--gy-type-body)",
+      color: "var(--gy-text-secondary)",
+      margin: "48px 0 0"
+    }
+  }, q ? "No articles match that search." : "Nothing published in this category yet."), years.map(y => /*#__PURE__*/React.createElement("div", {
     key: y,
     style: {
       marginTop: 48
@@ -3351,18 +3372,10 @@ function ArchiveView({
       textTransform: "uppercase",
       color: "var(--gy-ink-500)"
     }
-  }, rows.filter(a => a.iso.startsWith(y)).length, " articles")), rows.filter(a => a.iso.startsWith(y)).map(a => /*#__PURE__*/React.createElement("div", {
+  }, pageRows.filter(a => a.iso.startsWith(y)).length, " on this page")), pageRows.filter(a => a.iso.startsWith(y)).map(a => /*#__PURE__*/React.createElement("div", {
     key: a.id,
-    onClick: () => onOpenArticle(a),
-    style: {
-      display: "grid",
-      gridTemplateColumns: "112px 1fr 190px 92px",
-      gap: 24,
-      alignItems: "baseline",
-      padding: "16px 0",
-      borderBottom: "var(--gy-border-subtle)",
-      cursor: "pointer"
-    }
+    className: "gy-archive-row",
+    onClick: () => onOpenArticle(a)
   }, /*#__PURE__*/React.createElement("span", {
     style: {
       font: "var(--gy-type-meta)",
@@ -3389,16 +3402,16 @@ function ArchiveView({
       color: "var(--gy-ink-400)",
       textAlign: "right"
     }
-  }, a.kind))))), /*#__PURE__*/React.createElement("div", {
+  }, a.kind))))), pageCount > 1 && /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       justifyContent: "center",
       marginTop: 44
     }
   }, /*#__PURE__*/React.createElement(Pagination, {
-    page: page,
-    pageCount: 3,
-    onChange: setPage
+    page: current,
+    pageCount: pageCount,
+    onChange: goPage
   }))));
 }
 Object.assign(window, {
@@ -3498,12 +3511,9 @@ function ArticleView({
       color: "var(--gy-ink-500)"
     }
   }, a.kind, " \xB7 The Guildyard Journal"))), /*#__PURE__*/React.createElement("div", {
+    className: "gy-split is-prose",
     style: {
-      display: "grid",
-      gridTemplateColumns: "minmax(0,var(--gy-measure-prose)) 1fr",
-      gap: 72,
-      marginTop: 48,
-      alignItems: "start"
+      marginTop: 48
     }
   }, /*#__PURE__*/React.createElement(Prose, null, /*#__PURE__*/React.createElement("p", null, "The first person who reads an offer is not a customer. They are a measurement \u2014 and the measurement is usually thrown away, because it arrives before anyone has decided what it would mean."), /*#__PURE__*/React.createElement("h2", null, "Decide what the reader is being asked"), /*#__PURE__*/React.createElement("p", null, "A reader can be asked for attention, for an opinion, or for money. These are different tests with different failure modes, and running them together produces a result that cannot be interpreted. Pick one, and write down which."), /*#__PURE__*/React.createElement("p", null, "The temptation is to ask for all three at once \u2014 a page that explains, persuades and sells \u2014 on the grounds that a visitor is expensive and should be fully used. That reasoning is sound for a business with a known offer. For a venture still establishing whether the offer exists, it destroys the only information the visit could have produced."), /*#__PURE__*/React.createElement("h4", null, "Field note"), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, "Write the claim the page is testing, in one sentence."), /*#__PURE__*/React.createElement("li", null, "Name the number that would falsify it."), /*#__PURE__*/React.createElement("li", null, "Set the date you will look at that number.")), /*#__PURE__*/React.createElement("h2", null, "Interest is not evidence"), /*#__PURE__*/React.createElement("p", null, "Encouragement is the cheapest thing a reader can give, and the most likely thing to be offered. Evidence costs the reader something \u2014 a reply, a schedule, a payment, a name they have to defend later."), /*#__PURE__*/React.createElement("blockquote", null, /*#__PURE__*/React.createElement("p", null, "Evidence beats enthusiasm, and a written date beats both.")), /*#__PURE__*/React.createElement("p", null, "This is why a small, specific response is worth more than a large, vague one. Ten people who each did something inconvenient tell you more than a thousand who nodded."), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("h2", null, "What the first reader is owed"), /*#__PURE__*/React.createElement("p", null, "Clarity, mostly. What this is, who it is for, what it costs, and what it does not do. Stating the limits is not modesty; it is the fastest way to find the reader who wants exactly this, and to stop wasting the ones who do not."), /*#__PURE__*/React.createElement("p", null, "The venture that writes its exclusions down finds its audience sooner, because the audience can recognise itself.")), /*#__PURE__*/React.createElement("aside", {
     style: {
@@ -3518,6 +3528,7 @@ function ArticleView({
       display: "flex",
       flexDirection: "column",
       gap: 12,
+      alignItems: "flex-start",
       paddingBottom: 20,
       borderBottom: "var(--gy-border-subtle)"
     }
@@ -3551,7 +3562,8 @@ function ArticleView({
     style: {
       display: "flex",
       flexDirection: "column",
-      gap: 12
+      gap: 12,
+      alignItems: "flex-start"
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -3603,10 +3615,8 @@ function ArticleView({
       color: "var(--gy-copper-600)"
     }
   }, "More from the Journal"), /*#__PURE__*/React.createElement("div", {
+    className: "gy-more",
     style: {
-      display: "grid",
-      gridTemplateColumns: "repeat(3,1fr)",
-      gap: 32,
       marginTop: 26
     }
   }, more.map(m => /*#__PURE__*/React.createElement("div", {
@@ -3754,17 +3764,13 @@ function HomeView({
   } = window;
   const latest = window.GY_ARTICLES.slice(0, 3);
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("section", {
+    className: "gy-hero",
     style: {
       padding: "112px 0 96px",
       borderBottom: "var(--gy-border-subtle)"
     }
   }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: "grid",
-      gridTemplateColumns: "1.25fr .75fr",
-      gap: 72,
-      alignItems: "start"
-    }
+    className: "gy-split"
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
@@ -3850,6 +3856,7 @@ function HomeView({
     name: "arrow-right",
     size: 13
   })))))), /*#__PURE__*/React.createElement("section", {
+    className: "gy-band",
     style: {
       padding: "88px 0",
       background: "var(--gy-ink-100)"
@@ -3858,10 +3865,8 @@ function HomeView({
     align: "left",
     tone: "ink"
   }, "How the umbrella works"), /*#__PURE__*/React.createElement("div", {
+    className: "gy-thirds",
     style: {
-      display: "grid",
-      gridTemplateColumns: "repeat(3,1fr)",
-      gap: 40,
       marginTop: 44
     }
   }, [["01", "Ideas are tested, not launched", "An idea earns its next stage by answering a question that was written down before the work began."], ["02", "Each venture keeps its own identity", "Audience, name, offer and commercial model belong to the venture. The parent name stays out of the way."], ["03", "Continuity sits with the parent", "Ownership, records and the decisions already made persist here, so nothing has to be re-argued from scratch."]].map(([n, t, b]) => /*#__PURE__*/React.createElement("div", {
@@ -4013,15 +4018,12 @@ function JournalView({
       padding: "8px 0 56px"
     }
   }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("article", {
+    className: "gy-split is-lead",
     onClick: () => onOpenArticle(lead),
     style: {
       cursor: "pointer",
       borderTop: "3px solid var(--gy-ink-800)",
-      paddingTop: 32,
-      display: "grid",
-      gridTemplateColumns: "1.35fr .65fr",
-      gap: 64,
-      alignItems: "start"
+      paddingTop: 32
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -4061,6 +4063,7 @@ function JournalView({
     name: "arrow-right",
     size: 13
   }))), /*#__PURE__*/React.createElement("aside", {
+    className: "gy-aside-left",
     style: {
       borderLeft: "var(--gy-border-default)",
       paddingLeft: 28,
@@ -4132,12 +4135,7 @@ function AboutView({
       padding: "72px 0 96px"
     }
   }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: "grid",
-      gridTemplateColumns: "minmax(0,var(--gy-measure-prose)) 1fr",
-      gap: 72,
-      alignItems: "start"
-    }
+    className: "gy-split is-prose"
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
@@ -4162,7 +4160,8 @@ function AboutView({
       borderTop: "3px solid var(--gy-ink-800)",
       display: "flex",
       flexDirection: "column",
-      gap: 12
+      gap: 12,
+      alignItems: "flex-start"
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -4181,7 +4180,8 @@ function AboutView({
     style: {
       display: "flex",
       flexDirection: "column",
-      gap: 12
+      gap: 12,
+      alignItems: "flex-start"
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -4262,7 +4262,6 @@ Object.assign(window, {
 try { (() => {
 const {
   Logo,
-  NavBar,
   Button,
   Divider,
   Icon,
@@ -4273,15 +4272,13 @@ const {
 function Container({
   children,
   width = 1160,
-  style
+  style,
+  className = ""
 }) {
   return /*#__PURE__*/React.createElement("div", {
+    className: "gy-wrap " + className,
     style: {
-      width: "100%",
       maxWidth: width,
-      margin: "0 auto",
-      padding: "0 40px",
-      boxSizing: "border-box",
       ...style
     }
   }, children);
@@ -4304,18 +4301,42 @@ function SiteHeader({
   onNavigate
 }) {
   const active = view === "article" ? "journal" : view === "policy" ? "about" : view;
-  return /*#__PURE__*/React.createElement(NavBar, {
-    tone: "light",
-    items: GY_NAV,
-    activeId: active,
-    onNavigate: onNavigate,
-    actions: /*#__PURE__*/React.createElement(Button, {
-      size: "sm",
-      variant: "secondary",
-      iconRight: "arrow-right",
-      onClick: () => onNavigate("journal")
-    }, "Read the Journal")
-  });
+  return /*#__PURE__*/React.createElement("header", {
+    className: "gy-header"
+  }, /*#__PURE__*/React.createElement(Container, {
+    className: "gy-header-inner"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#",
+    onClick: e => {
+      e.preventDefault();
+      onNavigate("home");
+    },
+    style: {
+      borderBottom: "none"
+    }
+  }, /*#__PURE__*/React.createElement(Logo, {
+    variant: "lockup",
+    tone: "charcoal",
+    height: 32,
+    basePath: "../.."
+  })), /*#__PURE__*/React.createElement("nav", {
+    className: "gy-nav"
+  }, GY_NAV.map(it => /*#__PURE__*/React.createElement("a", {
+    key: it.id,
+    href: "#",
+    className: it.id === active ? "is-active" : "",
+    onClick: e => {
+      e.preventDefault();
+      onNavigate(it.id);
+    }
+  }, it.label))), /*#__PURE__*/React.createElement("div", {
+    className: "gy-header-cta"
+  }, /*#__PURE__*/React.createElement(Button, {
+    size: "sm",
+    variant: "secondary",
+    iconRight: "arrow-right",
+    onClick: () => onNavigate("journal")
+  }, "Read the Journal"))));
 }
 function SiteFooter({
   onNavigate
@@ -4327,12 +4348,7 @@ function SiteFooter({
       marginTop: 8
     }
   }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: "grid",
-      gridTemplateColumns: "1.6fr 1fr 1fr",
-      gap: 56,
-      alignItems: "start"
-    }
+    className: "gy-footer-grid"
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
@@ -4343,16 +4359,16 @@ function SiteFooter({
   }, /*#__PURE__*/React.createElement(Logo, {
     variant: "lockup",
     tone: "ivory",
-    height: 24,
+    height: 32,
     basePath: "../.."
-  }), /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/logo/guildyard-tagline-ivory.svg",
-    alt: "Built on Intent. Focused on Value.",
-    style: {
-      height: 11,
-      opacity: 0.75
-    }
   }), /*#__PURE__*/React.createElement("p", {
+    style: {
+      font: "var(--gy-weight-semibold) 18px/1.35 var(--gy-font-serif)",
+      letterSpacing: "0.02em",
+      color: "var(--gy-ink-50)",
+      margin: 0
+    }
+  }, "Built on Intent. Focused on Value."), /*#__PURE__*/React.createElement("p", {
     style: {
       font: "var(--gy-type-body)",
       color: "var(--gy-text-on-inverse-muted)",
@@ -4440,7 +4456,7 @@ function SiteFooter({
   }, "The Journal is free to read"))));
 }
 
-/* A Journal listing row — the archive's and Journal home's shared unit. */
+/* A Journal listing row. Shared by the archive and Journal home. */
 function ArticleRow({
   a,
   onOpen,
@@ -4448,18 +4464,10 @@ function ArticleRow({
 }) {
   const [hover, setHover] = React.useState(false);
   return /*#__PURE__*/React.createElement("article", {
+    className: "gy-article-row",
     onClick: () => onOpen(a),
     onMouseEnter: () => setHover(true),
-    onMouseLeave: () => setHover(false),
-    style: {
-      display: "grid",
-      gridTemplateColumns: "132px 1fr auto",
-      gap: 28,
-      alignItems: "baseline",
-      padding: "22px 0",
-      borderBottom: "var(--gy-border-subtle)",
-      cursor: "pointer"
-    }
+    onMouseLeave: () => setHover(false)
   }, /*#__PURE__*/React.createElement("span", {
     style: {
       font: "var(--gy-type-meta)",

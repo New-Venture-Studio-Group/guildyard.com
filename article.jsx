@@ -26,10 +26,10 @@ function ArticleView({ article, onNavigate, onOpenArticle }) {
 
           <div className="gy-split is-prose" style={{ marginTop: 48 }}>
             <Prose>
-              <p>The first person who reads an offer is not a customer. They are a measurement, and the measurement is usually thrown away, because it arrives before anyone has decided what it would mean.</p>
+              <p>The first person who reads an offer is not a customer. They are a measurement — and the measurement is usually thrown away, because it arrives before anyone has decided what it would mean.</p>
               <h2>Decide what the reader is being asked</h2>
               <p>A reader can be asked for attention, for an opinion, or for money. These are different tests with different failure modes, and running them together produces a result that cannot be interpreted. Pick one, and write down which.</p>
-              <p>The temptation is to ask for all three at once: a page that explains, persuades, and sells. That is usually justified on the grounds that a visitor is expensive and should be fully used. That reasoning is sound for a business with a known offer. For a venture still establishing whether the offer exists, it destroys the only information the visit could have produced.</p>
+              <p>The temptation is to ask for all three at once — a page that explains, persuades and sells — on the grounds that a visitor is expensive and should be fully used. That reasoning is sound for a business with a known offer. For a venture still establishing whether the offer exists, it destroys the only information the visit could have produced.</p>
               <h4>Field note</h4>
               <ul>
                 <li>Write the claim the page is testing, in one sentence.</li>
@@ -37,7 +37,7 @@ function ArticleView({ article, onNavigate, onOpenArticle }) {
                 <li>Set the date you will look at that number.</li>
               </ul>
               <h2>Interest is not evidence</h2>
-              <p>Encouragement is the cheapest thing a reader can give, and the most likely thing to be offered. Evidence costs the reader something: a reply, a schedule, a payment, a name they have to defend later.</p>
+              <p>Encouragement is the cheapest thing a reader can give, and the most likely thing to be offered. Evidence costs the reader something — a reply, a schedule, a payment, a name they have to defend later.</p>
               <blockquote><p>Evidence beats enthusiasm, and a written date beats both.</p></blockquote>
               <p>This is why a small, specific response is worth more than a large, vague one. Ten people who each did something inconvenient tell you more than a thousand who nodded.</p>
               <hr />
@@ -47,14 +47,14 @@ function ArticleView({ article, onNavigate, onOpenArticle }) {
             </Prose>
 
             <aside style={{ display: "flex", flexDirection: "column", gap: 22, position: "sticky", top: 24 }}>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12, paddingBottom: 20, borderBottom: "var(--gy-border-subtle)" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "flex-start", paddingBottom: 20, borderBottom: "var(--gy-border-subtle)" }}>
                 <span style={{ font: "var(--gy-type-meta)", letterSpacing: "var(--gy-tracking-wider)", textTransform: "uppercase", color: "var(--gy-ink-500)" }}>Share</span>
                 <div style={{ display: "flex", gap: 8 }}>
                   <Tooltip content="Copy permalink"><IconButton icon="link" label="Copy permalink" variant="outline" size="sm" /></Tooltip>
                   <Tooltip content="Email this article"><IconButton icon="mail" label="Email this article" variant="outline" size="sm" /></Tooltip>
                 </div>
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "flex-start" }}>
                 <span style={{ font: "var(--gy-type-meta)", letterSpacing: "var(--gy-tracking-wider)", textTransform: "uppercase", color: "var(--gy-ink-500)" }}>Category</span>
                 <Tag onClick={() => onNavigate("journal")}>{a.category}</Tag>
               </div>
@@ -72,7 +72,7 @@ function ArticleView({ article, onNavigate, onOpenArticle }) {
       <section style={{ padding: "80px 0 96px", marginTop: 64, borderTop: "var(--gy-border-subtle)" }}>
         <Container>
           <span style={{ font: "var(--gy-type-meta)", letterSpacing: "var(--gy-tracking-wider)", textTransform: "uppercase", color: "var(--gy-copper-600)" }}>More from the Journal</span>
-          <div className="gy-more">
+          <div className="gy-more" style={{ marginTop: 26 }}>
             {more.map((m) => (
               <div key={m.id} onClick={() => onOpenArticle(m)} style={{ cursor: "pointer", display: "flex", flexDirection: "column", gap: 12, paddingTop: 18, borderTop: "3px solid var(--gy-ink-800)" }}>
                 <ArticleMeta date={m.date} category={m.category} />

@@ -21,6 +21,7 @@
   --gy-container-md:960px;
   --gy-container-lg:1200px;
   --gy-container-xl:1360px;
+  --gy-container-site:1160px; /* guildyard.com content max — what .gy-wrap uses */
   --gy-gutter:24px;
   --gy-gutter-lg:40px;
   --gy-section-y:96px;
