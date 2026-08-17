@@ -1,0 +1,121 @@
+---
+import Base from "../layouts/Base.astro";
+import { getArticles, formatDate, isoDay, CATEGORIES } from "../lib/journal";
+
+const all = await getArticles();
+const years = [...new Set(all.map((a) => a.data.date.getFullYear()))].sort((a, b) => b - a);
+const counts = CATEGORIES.map((c) => ({ name: c, n: all.filter((a) => a.data.category === c).length }));
+---
+<Base title="Archive · The Guildyard Journal" section="archive"
+  description="Everything the Guildyard Journal has published, newest first.">
+  <section class="archive">
+    <div class="gy-wrap">
+      <div class="head">
+        <div class="intro">
+          <span class="eyebrow">Archive</span>
+          <h1>Everything the Journal has published</h1>
+          <p class="quiet">Newest first. {all.length} {all.length === 1 ? "article" : "articles"}.</p>
+        </div>
+        <div class="gy-search">
+          <label class="field-label" for="archive-filter">Filter the archive</label>
+          <input id="archive-filter" type="search" placeholder="Keyword or category" autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="cats" role="group" aria-label="Filter by category">
+        <button type="button" class="cat is-active" data-cat="">All <span class="n">{all.length}</span></button>
+        {counts.filter((c) => c.n > 0).map((c) => (
+          <button type="button" class="cat" data-cat={c.name}>{c.name} <span class="n">{c.n}</span></button>
+        ))}
+      </div>
+
+      <p class="no-results" hidden>No articles match that filter.</p>
+
+      {years.map((y) => (
+        <div class="year" data-year={y}>
+          <div class="year-head">
+            <span class="y">{y}</span>
+            <span class="y-count">{all.filter((a) => a.data.date.getFullYear() === y).length} articles</span>
+          </div>
+          {all.filter((a) => a.data.date.getFullYear() === y).map((a) => (
+            <a class="gy-archive-row row" href={`/journal/${a.id}/`}
+               data-title={a.data.title.toLowerCase()}
+               data-lede={a.data.lede.toLowerCase()}
+               data-cat={a.data.category}>
+              <time datetime={isoDay(a.data.date)}>{isoDay(a.data.date)}</time>
+              <span class="title">{a.data.title}</span>
+              <span class="cat-label">{a.data.category}</span>
+              <span class="kind">{a.data.kind}</span>
+            </a>
+          ))}
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<script>
+  /* Progressive enhancement only: every article is already in the HTML and every
+     row is a real link. Without JavaScript this is a complete, readable archive;
+     the script just hides rows. */
+  const input = document.getElementById("archive-filter");
+  const cats = [...document.querySelectorAll(".cat")];
+  const rows = [...document.querySelectorAll(".row")];
+  const years = [...document.querySelectorAll(".year")];
+  const none = document.querySelector(".no-results");
+  let category = "";
+
+  function apply() {
+    const q = (input.value || "").trim().toLowerCase();
+    let shown = 0;
+    for (const row of rows) {
+      const matchesCat = !category || row.dataset.cat === category;
+      const matchesQ = !q || row.dataset.title.includes(q) || row.dataset.lede.includes(q) || row.dataset.cat.toLowerCase().includes(q);
+      const show = matchesCat && matchesQ;
+      row.hidden = !show;
+      if (show) shown++;
+    }
+    for (const year of years) {
+      year.hidden = ![...year.querySelectorAll(".row")].some((r) => !r.hidden);
+    }
+    none.hidden = shown !== 0;
+  }
+
+  input.addEventListener("input", apply);
+  for (const btn of cats) {
+    btn.addEventListener("click", () => {
+      category = btn.dataset.cat;
+      for (const b of cats) b.classList.toggle("is-active", b === btn);
+      apply();
+    });
+  }
+</script>
+
+<style>
+.archive{padding:72px 0 96px}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.intro{display:flex;flex-direction:column;gap:14px;max-width:620px}
+.eyebrow{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;color:var(--gy-copper-600)}
+.archive h1{font:var(--gy-weight-semibold) var(--gy-text-4xl)/1.16 var(--gy-font-serif);letter-spacing:-.012em;color:var(--gy-ink-900)}
+.quiet{font:var(--gy-type-body);color:var(--gy-text-secondary);margin:0}
+.field-label{display:block;font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;color:var(--gy-ink-600);margin-bottom:8px}
+.gy-search input{width:100%;height:32px;box-sizing:border-box;padding:0 12px;font:var(--gy-type-body-sm);color:var(--gy-text-primary);background:var(--gy-ink-0);border:1px solid var(--gy-ink-200);border-radius:var(--gy-radius-sm);outline:none;transition:var(--gy-transition-color)}
+.gy-search input:focus{border-color:var(--gy-copper-500);box-shadow:0 0 0 3px rgba(165,106,67,.16)}
+.cats{display:flex;gap:8px;flex-wrap:wrap;margin-top:36px}
+.cat{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;background:transparent;color:var(--gy-ink-600);border:var(--gy-border-default);border-radius:var(--gy-radius-sm);font:var(--gy-weight-medium) var(--gy-text-xs)/1 var(--gy-font-sans);cursor:pointer;transition:var(--gy-transition-color)}
+.cat:hover{background:var(--gy-ink-100)}
+.cat.is-active{background:var(--gy-ink-800);color:var(--gy-ink-50);border-color:var(--gy-ink-800)}
+.cat .n{font:var(--gy-weight-medium) var(--gy-text-2xs)/1 var(--gy-font-mono);opacity:.7}
+.no-results{font:var(--gy-type-body);color:var(--gy-text-secondary);margin:48px 0 0}
+.year{margin-top:48px}
+.year-head{display:flex;align-items:center;gap:18px;padding-bottom:12px;border-bottom:1px solid var(--gy-ink-800)}
+.y{font:var(--gy-weight-medium) var(--gy-text-2xl)/1 var(--gy-font-mono);color:var(--gy-ink-900)}
+.y-count{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wide);text-transform:uppercase;color:var(--gy-ink-500)}
+.row{text-decoration:none;border-bottom:var(--gy-border-subtle)}
+.row time{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wide);color:var(--gy-ink-500)}
+.row .title{font:var(--gy-weight-semibold) var(--gy-text-lg)/1.3 var(--gy-font-serif);color:var(--gy-ink-900)}
+.row:hover .title{color:var(--gy-copper-700)}
+.row .cat-label{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wide);text-transform:uppercase;color:var(--gy-copper-600)}
+.row .kind{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wide);text-transform:uppercase;color:var(--gy-ink-400)}
+@media (min-width:800px){.row .kind{text-align:right}}
+</style>

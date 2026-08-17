@@ -1,0 +1,26 @@
+---
+/* A Journal listing row. Shared by the Journal home and the archive. */
+import ArticleMeta from "./ArticleMeta.astro";
+import { formatDate, isoDay, readingTime, type Article } from "../lib/journal";
+interface Props { entry: Article; showLede?: boolean; }
+const { entry, showLede = true } = Astro.props;
+const { title, lede, category, date } = entry.data;
+---
+<article class="gy-article-row">
+  <time datetime={isoDay(date)} class="date">{formatDate(date)}</time>
+  <div class="body">
+    <h3><a href={`/journal/${entry.id}/`}>{title}</a></h3>
+    {showLede && <p>{lede}</p>}
+  </div>
+  <span class="cat">{category}</span>
+</article>
+
+<style>
+.date{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wide);text-transform:uppercase;color:var(--gy-ink-500)}
+.body{display:flex;flex-direction:column;gap:7px}
+.gy-article-row h3{font:var(--gy-weight-semibold) var(--gy-text-xl)/1.26 var(--gy-font-serif);letter-spacing:var(--gy-tracking-tight)}
+.gy-article-row h3 a{color:var(--gy-ink-900);text-decoration:none;border-bottom:none;transition:var(--gy-transition-color)}
+.gy-article-row h3 a:hover{color:var(--gy-copper-700)}
+.gy-article-row p{font:var(--gy-type-body);color:var(--gy-text-secondary);margin:0;max-width:620px}
+.cat{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wide);text-transform:uppercase;color:var(--gy-copper-600);white-space:nowrap}
+</style>

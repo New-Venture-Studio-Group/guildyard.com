@@ -1,0 +1,21 @@
+---
+/* The Journal byline row: date · copper category · reading time, in that order.
+   Omit a part rather than reordering. */
+interface Props { date: Date; category: string; readingTime?: string; tone?: "light" | "dark"; }
+import { formatDate, isoDay } from "../lib/journal";
+const { date, category, readingTime, tone = "light" } = Astro.props;
+---
+<div class={`gy-meta ${tone === "dark" ? "is-dark" : ""}`}>
+  <time datetime={isoDay(date)}>{formatDate(date)}</time>
+  <span aria-hidden="true" class="sep">·</span>
+  <span class="cat">{category}</span>
+  {readingTime && <><span aria-hidden="true" class="sep">·</span><span>{readingTime}</span></>}
+</div>
+
+<style>
+.gy-meta{display:flex;align-items:center;gap:var(--gy-space-2);flex-wrap:wrap;font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wide);text-transform:uppercase;color:var(--gy-ink-500)}
+.gy-meta.is-dark{color:rgba(246,243,238,.6)}
+.gy-meta .sep{opacity:.5}
+.gy-meta .cat{color:var(--gy-copper-600)}
+.gy-meta.is-dark .cat{color:var(--gy-copper-400)}
+</style>

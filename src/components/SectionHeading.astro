@@ -1,0 +1,21 @@
+---
+/* Mono eyebrow, serif heading, 44x3 copper rule, optional serif lede. */
+interface Props { eyebrow?: string; title: string; description?: string; level?: 1 | 2 | 3; }
+const { eyebrow, title, description, level = 2 } = Astro.props;
+const Tag = `h${level}`;
+---
+<header class="gy-heading">
+  {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+  <Tag class={level === 1 ? "t1" : "t2"}>{title}</Tag>
+  <span aria-hidden="true" class="rule"></span>
+  {description && <p>{description}</p>}
+</header>
+
+<style>
+.gy-heading{display:flex;flex-direction:column;gap:var(--gy-space-3);align-items:flex-start;max-width:var(--gy-measure-lede)}
+.eyebrow{font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;color:var(--gy-copper-600)}
+.t1{font:var(--gy-type-h1);letter-spacing:var(--gy-tracking-tight);color:var(--gy-text-primary)}
+.t2{font:var(--gy-type-h2);letter-spacing:var(--gy-tracking-tight);color:var(--gy-text-primary)}
+.rule{width:44px;height:3px;background:var(--gy-copper-500)}
+.gy-heading p{font:var(--gy-type-lede);color:var(--gy-text-body);margin:0}
+</style>

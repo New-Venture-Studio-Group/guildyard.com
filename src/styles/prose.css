@@ -1,0 +1,21 @@
+/* Long-form article body. Ported from the design system's Prose component.
+   The 680px measure is the single most important rule in the editorial layer. */
+.gy-prose{max-width:var(--gy-measure-prose);font:var(--gy-type-prose);color:var(--gy-ink-800)}
+.gy-prose > * + *{margin-top:1.05em}
+.gy-prose p{margin:0;text-wrap:pretty}
+.gy-prose h2{font:var(--gy-weight-semibold) var(--gy-text-2xl)/1.24 var(--gy-font-serif);letter-spacing:var(--gy-tracking-tight);color:var(--gy-ink-900);margin-top:2em}
+.gy-prose h3{font:var(--gy-weight-semibold) var(--gy-text-xl)/1.28 var(--gy-font-serif);color:var(--gy-ink-900);margin-top:1.7em}
+.gy-prose h4{font:var(--gy-weight-semibold) var(--gy-text-2xs)/1.2 var(--gy-font-mono);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;color:var(--gy-copper-600);margin-top:1.8em}
+.gy-prose ul,.gy-prose ol{margin:0;padding-left:1.35em}
+.gy-prose li + li{margin-top:.45em}
+.gy-prose blockquote{margin:1.6em 0;padding-left:22px;border-left:3px solid var(--gy-copper-500);font-style:italic;color:var(--gy-ink-700)}
+.gy-prose blockquote p{font-size:var(--gy-text-lg)}
+.gy-prose hr{border:0;height:1px;background:var(--gy-line-default);margin:2.2em 0}
+.gy-prose a{color:var(--gy-text-link)}
+.gy-prose strong{font-weight:var(--gy-weight-bold)}
+.gy-prose code{font:var(--gy-weight-regular) .88em/1.5 var(--gy-font-mono);background:var(--gy-ink-100);padding:1px 5px;border-radius:var(--gy-radius-xs)}
+.gy-prose figure{margin:2em 0}
+.gy-prose figcaption{font:var(--gy-type-body-sm);color:var(--gy-text-secondary);margin-top:8px}
+.gy-prose table{width:100%;border-collapse:collapse;font:var(--gy-type-body)}
+.gy-prose th{text-align:left;font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wider);text-transform:uppercase;color:var(--gy-ink-500);padding:8px 0;border-bottom:1px solid var(--gy-line-default)}
+.gy-prose td{padding:10px 0;border-bottom:1px solid var(--gy-line-subtle)}
