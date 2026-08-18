@@ -43,17 +43,21 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
   <meta name="twitter:card" content="summary" />
 </head>
 <body>
-  <header class="gy-header">
+  <header class:list={["gy-header", section === "home" && "gy-header-overlay"]}>
     <div class="gy-wrap gy-header-inner">
-      <a href="/" style="border-bottom:none"><Logo variant="lockup" tone="charcoal" height={32} /></a>
+      <a href="/" style="border-bottom:none">
+        <Logo variant="lockup" tone={section === "home" ? "ivory" : "charcoal"} height={32} />
+      </a>
       <nav class="gy-nav">
         {NAV.map((it) => (
           <a href={it.href} class={it.id === section ? "is-active" : ""}>{it.label}</a>
         ))}
       </nav>
-      <div class="gy-header-cta">
-        <Button href="/journal/" variant="secondary" size="sm" iconRight="arrow-right">Read the Journal</Button>
-      </div>
+      {section !== "home" && (
+        <div class="gy-header-cta">
+          <Button href="/journal/" variant="secondary" size="sm" iconRight="arrow-right">Read the Journal</Button>
+        </div>
+      )}
     </div>
   </header>
 
@@ -100,4 +104,9 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
 .col a:hover{color:var(--gy-ink-50)}
 .place{font:var(--gy-type-body);color:rgba(246,243,238,.38)}
 .legal{margin-top:48px;padding-top:18px;border-top:1px solid rgba(246,243,238,.12);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:var(--gy-type-meta);letter-spacing:var(--gy-tracking-wide);color:rgba(246,243,238,.42)}
+/* Home video hero: sit the header on the media, ivory type. */
+.gy-header-overlay{position:absolute;top:0;left:0;right:0;z-index:4;background:transparent;border-bottom:1px solid rgba(246,243,238,.12)}
+.gy-header-overlay .gy-nav a{color:rgba(246,243,238,.72)}
+.gy-header-overlay .gy-nav a:hover{color:var(--gy-ink-50)}
+.gy-header-overlay .gy-nav a.is-active{color:var(--gy-ink-50);border-bottom-color:var(--gy-copper-400)}
 </style>

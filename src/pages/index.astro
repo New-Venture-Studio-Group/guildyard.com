@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import HomeHero from "../components/HomeHero.astro";
 import Button from "../components/Button.astro";
 import RuleLabel from "../components/RuleLabel.astro";
 import ArticleRow from "../components/ArticleRow.astro";
@@ -15,6 +16,7 @@ const MODEL = [
 ];
 ---
 <Base title="Guildyard LLC" section="home">
+  <HomeHero />
   <section class="gy-hero statement">
     <div class="gy-wrap">
       <div class="gy-split">

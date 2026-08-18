@@ -1,0 +1,77 @@
+---
+import Logo from "./Logo.astro";
+---
+<section class="home-hero" aria-label="Guildyard">
+  <div class="home-hero-media" aria-hidden="true">
+    <video
+      class="home-hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="/assets/video/guildyard-workshop-poster.jpg"
+      disablepictureinpicture
+    >
+      <source src="/assets/video/guildyard-workshop.mp4" type="video/mp4" />
+    </video>
+    <div class="home-hero-overlay"></div>
+  </div>
+  <div class="home-hero-copy">
+    <Logo variant="lockup" tone="ivory" height={48} />
+    <p class="home-hero-tagline">Built on Intent. Focused on Value.</p>
+  </div>
+</section>
+
+<style>
+.home-hero{
+  position:relative;
+  width:100%;
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#111214 url("/assets/video/guildyard-workshop-poster.jpg") center/cover no-repeat;
+  color:var(--gy-ink-50);
+}
+.home-hero-media{
+  position:absolute;
+  inset:0;
+}
+.home-hero-video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+.home-hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(23,24,28,.58) 0%, rgba(23,24,28,.48) 45%, rgba(23,24,28,.62) 100%);
+}
+.home-hero-copy{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:28px;
+  padding:120px 24px 64px;
+  text-align:center;
+}
+.home-hero-tagline{
+  margin:0;
+  font:var(--gy-weight-semibold) clamp(20px, 2.4vw, 28px)/1.3 var(--gy-font-serif);
+  letter-spacing:.03em;
+  color:var(--gy-ink-50);
+}
+
+@media (max-width: 800px){
+  .home-hero-video{display:none}
+}
+@media (prefers-reduced-motion: reduce){
+  .home-hero-video{display:none}
+}
+</style>
